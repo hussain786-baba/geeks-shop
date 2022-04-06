@@ -1,0 +1,20 @@
+.main_section{
+    background-color: var(--primary-platinim);
+}
+.img-fluid{
+    border-left: 2px solid var(--primary-color);
+    padding-left: 2em;
+}
+.btn_sign{
+    width: 90%;
+    margin-left: auto;
+    background-color: var(--primary-color);
+    color: var(--primary-aliceblue);
+}
+.error_text{
+    font-size: 13px;
+    margin-left: 3px;
+}
+// input.ng-touched{
+//     border: 1px solid red;
+// }

@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* Importing Bootstrap SCSS file. */
+
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@400&display=swap');
+
+/* Importing Datepicker SCSS file. */
+
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+:root {
+    --primary-color: #F06543;
+    --primary-platinim: #e8e9eb;
+    --pimary-oynx: #313638;
+    --primary-aliceblue: #E9F1F7;
+    --secondary-oynx: #131B23;
+    --primary-curve: #0099ff;
+}

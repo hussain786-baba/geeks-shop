@@ -1,0 +1,89 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <div class="logo d-flex">
+                <a class="navbar-brand mt-2 mt-lg-0 d-flex align-items-center" href="#">
+                    <img src="../../assets/logo/logo2.png" height="45" alt="MDB Logo" />
+                    <span class="text-dark logo-text">Geeks</span>
+                </a>
+            </div>
+
+            <!-- Left links -->
+            <ul class="navbar-nav m-auto mb-2">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="contact">Contact Us</a>
+                </li>
+            </ul>
+            <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+            <!-- Avatar -->
+            <div class="dropdown me-2 p-2">
+                <div class="dropdown">
+                    <!-- <fa-icon [icon]="profile"></fa-icon> -->
+                    <div class="profile_img">
+                        <img src="../../assets/logo/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="profile">
+                    </div>
+                    <div id="myDropdown" class="dropdown-content">
+                        <div class="ms-3 lh-1 profile_info" *ngIf="profile_info">
+                            <h5 class="mb-1">Annette Black</h5>
+                            <p class="mb-0 text-muted">annette@geeksui.com</p>
+                            <hr>
+                        </div>
+                        <div class="dropdown-profile" *ngIf="dropdown_profile">
+                            <a href="#" class="w-100 ">
+                                <fa-icon [icon]="profileFont" class="fa_icon me-2"></fa-icon>Profile
+                            </a>
+                        </div>
+                        <div class="dropdown-setting" *ngIf="dropdown_setting">
+                            <a href="#" class="w-100 ">
+                                <fa-icon [icon]="faGearFont" class="fa_icon me-2"></fa-icon>Setting
+                            </a>
+                        </div>
+                        <div class="dropdown-signin d-flex" *ngIf="dropdown_signin">
+                            <a routerLink="login" class="w-100 ">
+                                <fa-icon [icon]="signinFont" class="fa_icon me-2"></fa-icon>Sign In
+                            </a>
+                        </div>
+                        <div class="dropdown-signup" *ngIf="dropdown_signup">
+                            <a routerLink="signup" class="w-100 ">
+                                <fa-icon [icon]="signupFont" class="fa_icon me-2"></fa-icon>Sign Up
+                            </a>
+                        </div>
+                        <div class="dropdown-signout" *ngIf="dropdown_signout">
+                            <hr style="color: white;">
+                            <a href="#" class="w-100 ">
+                                <fa-icon [icon]="signoutFont" class="fa_icon me-2"></fa-icon>Sign Out
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Right elements -->
+    </div>
+    <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

@@ -1,0 +1,23 @@
+.footer_company p {
+    margin-bottom: 8px;
+}
+
+.footer_support p {
+    margin-bottom: 8px;
+    color: var();
+}
+
+footer a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--secondary-aliceblue);
+}
+
+.footer_section a:hover {
+    color: var(--primary-color);
+}
+
+.footer_section,
+._copyright {
+    background-color: var(--secondary-oynx);
+}
