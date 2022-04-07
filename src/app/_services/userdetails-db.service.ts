@@ -1,4 +1,4 @@
-import { User } from './../_models/user.model';
+import { User } from '../_models_and_interface/user.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserdetailsDBService {
   dbUrl = 'https://angular-assignment-2-f3ef2-default-rtdb.firebaseio.com/users.json';
+ 
   userDetails = [];
   constructor(private http:HttpClient) { }
  
@@ -17,4 +18,6 @@ export class UserdetailsDBService {
   fetchUser(userInfo: User) {
     
   }
+
+  
 }

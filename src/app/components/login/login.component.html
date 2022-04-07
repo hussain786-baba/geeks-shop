@@ -2,6 +2,12 @@
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-10">
+                 <!-- Alert  -->
+                 <div class="alert alert-danger d-flex align-items-center shadow justify-content-center" role="alert" *ngIf="error">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                    <div> <strong>Error Code {{errorCode}} occured :</strong> {{errorMsg}}</div>
+                  </div>
+                  <!-- Alert  -->
                 <div class="card rounded-3 text-black">
                     <div class="row g-0">
                         <div class="col-lg-6">
@@ -12,16 +18,28 @@
                                 </div>
                                 <form [formGroup]="login" (ngSubmit)="onSubmit()"> 
                                     <p>Please login to your account</p>
-                                    <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example11" class="form-control" placeholder="Email address" />
-                                        <span class="text-danger error_text" *ngIf="submitted && login.get('email')?.errors?.['required']">Enter Email Address</span>
-                                        <span class="text-danger error_text" *ngIf="submitted && login.get('email')?.errors?.['pattern']">Enter Valid Email Address</span>
-                                    </div>
-                                    <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example22" class="form-control" placeholder="Password" />
-                                        <span class="text-danger error_text" *ngIf="submitted && login.get('password')?.errors?.['maxlength'] && login.get('password')?.errors?.['minlength']">Enter Password between 6 to 11 Character </span>
-                                        <span class="text-danger error_text" *ngIf="submitted && login.get('password')?.errors?.['required']">Enter Password  </span>
-                                    </div>
+            
+                                    <div class="input-group mb-3">
+                                        <div class="d-flex w-100">
+                                            <span class="input-group-text" id="basic-addon1"> <fa-icon [icon]="email" class="fa_icon"></fa-icon></span>
+                                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" formControlName="email">
+                                        </div>
+                                            <span class="text-danger error_text" *ngIf="submitted && login.get('email')?.errors?.['required']">Enter Email Address</span>
+                                            <span class="text-danger error_text" *ngIf="submitted && login.get('email')?.errors?.['pattern']">Enter Valid Email Address</span>
+                                            <span class="text-danger error_text" *ngIf="login.get('email')?.errors?.['whitespace']">No Whitespace Allowed</span>
+                                      </div>
+
+                                    <div class="input-group form-outline mb-3">
+                                        <div class="d-flex w-100">
+                                            <span class="input-group-text" id="basic-addon1"> <fa-icon [icon]="password" class="fa_icon"></fa-icon></span>
+                                            <input type="password" class="form-control" placeholder="Password" formControlName="password" aria-label="Password" aria-describedby="basic-addon1">
+                                        </div>
+                                            <span class="text-danger error_text" *ngIf="submitted && login.get('password')?.errors?.['required']">Enter Password  </span>
+                                            <span class="text-danger error_text" *ngIf="submitted && login.get('password')?.errors?.['maxlength'] && login.get('password')?.errors?.['minlength']">Enter Password between 6 to 11 Character </span>
+                                            <span class="text-danger error_text" *ngIf="login.get('password')?.errors?.['whitespace']">No Whitespace Allowed</span>
+                                        
+                                      </div>
+                                      
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <button class="btn btn_login btn-block fa-lg gradient-custom-2 mb-3 w-100" type="sumbit"> Login
                                         </button>

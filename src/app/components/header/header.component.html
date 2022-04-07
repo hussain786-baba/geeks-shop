@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Navbar brand -->
             <div class="logo d-flex">
-                <a class="navbar-brand mt-2 mt-lg-0 d-flex align-items-center" href="#">
+                <a class="navbar-brand mt-2 mt-lg-0 d-flex align-items-center">
                     <img src="../../assets/logo/logo2.png" height="45" alt="MDB Logo" />
                     <span class="text-dark logo-text">Geeks</span>
                 </a>
@@ -37,43 +37,40 @@
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
+            <!-- Buttons  -->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="signedOut">
+                <!-- <button class="btn btn-primary me-md-1" type="button">Sign In</button> -->
+                <button type="button" class="btn btn-outline-primary me-md-1" routerLink="login">Login</button>
+                <button class="btn btn-primary" type="button" routerLink="signup">Sign Up</button>
+              </div>
             <!-- Avatar -->
-            <div class="dropdown me-2 p-2">
+            <div class="dropdown me-2 p-2" *ngIf="signedIn">
                 <div class="dropdown">
                     <!-- <fa-icon [icon]="profile"></fa-icon> -->
                     <div class="profile_img">
                         <img src="../../assets/logo/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="profile">
                     </div>
-                    <div id="myDropdown" class="dropdown-content">
-                        <div class="ms-3 lh-1 profile_info" *ngIf="profile_info">
+
+                    <div id="myDropdown" class="dropdown-content" >
+                        <div class="ms-3 lh-1 profile_info">
                             <h5 class="mb-1">Annette Black</h5>
                             <p class="mb-0 text-muted">annette@geeksui.com</p>
                             <hr>
                         </div>
-                        <div class="dropdown-profile" *ngIf="dropdown_profile">
-                            <a href="#" class="w-100 ">
+                        <div class="dropdown-profile">
+                            <a class="w-100 " routerLink="user-profile" style="cursor: pointer;">
                                 <fa-icon [icon]="profileFont" class="fa_icon me-2"></fa-icon>Profile
                             </a>
                         </div>
-                        <div class="dropdown-setting" *ngIf="dropdown_setting">
-                            <a href="#" class="w-100 ">
+                        <div class="dropdown-setting">
+                            <a class="w-100 " style="cursor: pointer;">
                                 <fa-icon [icon]="faGearFont" class="fa_icon me-2"></fa-icon>Setting
                             </a>
                         </div>
-                        <div class="dropdown-signin d-flex" *ngIf="dropdown_signin">
-                            <a routerLink="login" class="w-100 ">
-                                <fa-icon [icon]="signinFont" class="fa_icon me-2"></fa-icon>Sign In
-                            </a>
-                        </div>
-                        <div class="dropdown-signup" *ngIf="dropdown_signup">
-                            <a routerLink="signup" class="w-100 ">
-                                <fa-icon [icon]="signupFont" class="fa_icon me-2"></fa-icon>Sign Up
-                            </a>
-                        </div>
-                        <div class="dropdown-signout" *ngIf="dropdown_signout">
+                        <div class="dropdown-signout">
                             <hr style="color: white;">
-                            <a href="#" class="w-100 ">
-                                <fa-icon [icon]="signoutFont" class="fa_icon me-2"></fa-icon>Sign Out
+                            <a class="w-100 " (click)="logout()" style="cursor: pointer;">
+                                <fa-icon [icon]="signoutFont" class="fa_icon me-2" ></fa-icon>Sign Out
                             </a>
                         </div>
 

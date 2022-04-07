@@ -2,17 +2,25 @@
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-11">
+                <!-- Alert  -->
+                <div class="alert alert-danger d-flex align-items-center shadow" role="alert" *ngIf="error">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                    <div> <strong>Error Code {{errorCode}} occured :</strong> {{errorMsg}}</div>
+                  </div>
+                  <!-- Alert  -->
                 <div class="card text-black shadow" style="border-radius: 25px;">
                     <div class="card-body p-md-5">
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                                <!-- Form  -->
                                 <form [formGroup]="signup" (ngSubmit)="onSubmit()" class="mx-1 mx-md-4">
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
                                             <input type="text" class="form-control" placeholder="First Name" formControlName="firstname" />
                                             <span class="text-danger error_text" *ngIf="submitted && signup.get('firstname')?.errors?.['required']">Enter First Name</span>
+                                            <span class="text-danger error_text" *ngIf="signup.get('firstname')?.errors?.['whitespace']">No Whitespace Allowed</span>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row align-items-center mb-4">
@@ -21,6 +29,7 @@
                                             <input type="text" class="form-control" placeholder="Last Name" formControlName="lastname" />
                                             <span class="text-danger error_text" *ngIf="submitted && signup.get('lastname')?.errors?.['required']">Enter Last Name
                                             </span>
+                                            <span class="text-danger error_text" *ngIf="signup.get('lastname')?.errors?.['whitespace']">No Whitespace Allowed</span>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row align-items-center mb-4">
@@ -28,7 +37,8 @@
                                         <div class="form-outline flex-fill mb-0">
                                             <input type="email" id="form3Example3c" class="form-control"  placeholder="Email Address" formControlName="email" />
                                             <span class="text-danger error_text" *ngIf="submitted && signup.get('email')?.errors?.['required']">Enter Email Address</span>
-                                            <span class="text-danger error_text" *ngIf="submitted && signup.get('email')?.errors?.['pattern']">Enter Valid Email Address</span>
+                                            <span class="text-danger error_text" *ngIf="submitted && signup.get('email')?.errors?.['pattern'] ">Enter Valid Email Address</span>
+                                            <!-- <span class="text-danger error_text" *ngIf="signup.get('email')?.errors?.['Validate']">No Whitespace Allowed</span> -->
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row align-items-center mb-4">
@@ -37,6 +47,7 @@
                                             <input type="password" id="form3Example4c" class="form-control" placeholder="Password" formControlName="password" />
                                             <span class="text-danger error_text" *ngIf="submitted && signup.get('password')?.errors?.['required']">Enter Password</span>
                                             <span class="text-danger error_text" *ngIf="submitted && signup.get('password')?.errors?.['maxlength']">Enter Password between 6 to 11 Character </span>
+                                            <span class="text-danger error_text" *ngIf="signup.get('password')?.errors?.['whitespace']">No Whitespace Allowed</span>
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row align-items-center mb-4">
@@ -46,6 +57,7 @@
                                             <span class="text-danger error_text" *ngIf="submitted && signup.get('cf_password')?.errors?.['required']">Confirm Password</span>
                                             <span class="text-danger error_text" *ngIf="submitted && signup.get('password')?.errors?.['maxlength']">Enter Password between 6 to 11 Character </span>
                                             <span class="text-danger error_text" *ngIf="submitted && passwordNotSame">Passwond and Confirm Password Not Same</span>
+                                            <span class="text-danger error_text" *ngIf="signup.get('cf_password')?.errors?.['whitespace']">No Whitespace Allowed</span>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center mb-3 mb-lg-4">
@@ -55,7 +67,6 @@
                                 </form>
                             </div>
                             <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
                                 <img src="../../assets/logo/logo2.png" class="img-fluid" alt="Sample image">
                             </div>
                         </div>

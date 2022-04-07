@@ -15,6 +15,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
 import { BlogArticleComponent } from './components/blog-article/blog-article.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignupComponent,
     FooterComponent,
     BlogArticleComponent,
+    UserProfileComponent,
+
   ],
   imports: [
     BrowserModule,
