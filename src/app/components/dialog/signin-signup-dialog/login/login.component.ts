@@ -1,11 +1,14 @@
-import { SigninroutingService } from './../../_services/signinrouting.service';
-import { AuthService } from './../../_services/auth.service';
-import { faEnvelope, faKey, faLock } from '@fortawesome/free-solid-svg-icons';
+
+import { AuthService } from '../../../../_services/auth.service';
+import { faClose, faEnvelope, faKey, faLock } from '@fortawesome/free-solid-svg-icons';
 
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { noWhitespaceValidator } from 'src/app/validators/whitespace';
 import { ErrorhandlingService } from 'src/app/_services/errorhandling.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +19,8 @@ export class LoginComponent implements OnInit {
   // Fontawesome 
   email = faEnvelope;
   password = faKey;
+  faClose = faClose;
+
   login!: FormGroup
   submitted: boolean = false
 
@@ -24,11 +29,15 @@ export class LoginComponent implements OnInit {
   errorMessage = this._errorMessage.errorMsg;
   errorMsg: any;
 
+  
+
   constructor(
     private formBuilder: FormBuilder,
-    private _profileDropdown: SigninroutingService,
     private _authService: AuthService,
     private _errorMessage: ErrorhandlingService,
+    private router: Router,
+    public dialog: MatDialog,
+    
 
   ) { }
 
@@ -49,14 +58,15 @@ export class LoginComponent implements OnInit {
       const password = this.login.value.password;
       this._authService.signin(email, password).subscribe(
         res => {
-          this._profileDropdown.signedIn.next(true)
-          this._profileDropdown.signedOut.next(false)
+          this.router.navigate([''])
+         this.dialog.closeAll()
         },
         err => {
           // console.log(err)
           if (err) {
             this.error = true
             this.errorMsg = this.errorMessage[err.error.error.message]
+            console.log(this.errorMsg)
             this.errorCode = err.error.error.code;
           }
         }
@@ -72,9 +82,16 @@ export class LoginComponent implements OnInit {
       'password': ['123456', [Validators.required, Validators.minLength(6), Validators.maxLength(11), noWhitespaceValidator]],
     })
   }
+  navigateLogin() {
+    this.dialog.closeAll()
+    this.dialog.open(SignupComponent,{ panelClass: 'app-full-bleed-dialog', })
+  }
+  dialogClose() {
+    this.dialog.closeAll()
+  }
 
 
-
+ 
 
 
 

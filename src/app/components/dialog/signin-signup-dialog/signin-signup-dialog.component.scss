@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap');
+.navbar-nav {
+    margin-top: 5px;
+}
+.navbar-nav li a {
+    color: var(--primary-oynx);
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+.navbar-nav ul {
+    justify-content: center;
+}
+.navbar {
+    background-color: var(--primary-aliceblue);
+}
+.navbar-nav li a:hover {
+    color: var(--primary-color);
+}
+.logo img{
+  margin: 0 1em 0 0;
+}
+.logo-text{
+  font-family: 'Beau Rivage', cursive;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+.profile_img img{
+width: 40px;
+height: 40px;
+border-radius: 50%;
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:var(--secondary-oynx);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: -24px;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: var(--primary-aliceblue);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: var(--primary-aliceblue);
+      color: var(--secondary-oynx);
+    }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  hr{
+      margin: 0;
+  }
+  .profile_info{
+    padding: 7px;
+    text-align: center;
+    color: var(--primary-aliceblue);
+  }
+  .mat-dialog-container {
+    padding: 0 !important;
+ }

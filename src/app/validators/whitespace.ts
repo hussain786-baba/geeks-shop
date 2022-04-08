@@ -1,6 +1,7 @@
 import { FormControl } from "@angular/forms";
 import { AbstractControl, ValidatorFn, ValidationErrors } from '@angular/forms';
-import { EMAIL_REGEX } from '../components/signup/signup.component';
+import { EMAIL_REGEX } from "../components/dialog/signin-signup-dialog/signup/signup.component";
+
 
 export function noWhitespaceValidator(control: FormControl) {
     const isSpace = (control.value || '').match(/\s/g);

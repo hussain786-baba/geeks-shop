@@ -1,11 +1,14 @@
-import { ErrorhandlingService } from './../../_services/errorhandling.service';
-import { AuthService } from './../../_services/auth.service';
-import { noWhitespaceValidator, ValidateEmail } from './../../validators/whitespace';
-
-import { UserdetailsDBService } from './../../_services/userdetails-db.service';
+import { Router } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { noWhitespaceValidator, ValidateEmail } from 'src/app/validators/whitespace';
+import { AuthService } from 'src/app/_services/auth.service';
+import { LoginComponent } from '../login/login.component';
+import { ErrorhandlingService } from 'src/app/_services/errorhandling.service';
+import { UserdetailsDBService } from 'src/app/_services/userdetails-db.service';
 export const EMAIL_REGEX: RegExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 @Component({
@@ -15,6 +18,7 @@ export const EMAIL_REGEX: RegExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\
 })
 
 export class SignupComponent implements OnInit {
+  faClose = faXmark;
   signup!: FormGroup;
   passwordNotSame: boolean = false;
   userDetail = []
@@ -30,6 +34,8 @@ export class SignupComponent implements OnInit {
     private _userDetail: UserdetailsDBService,
     private _authService: AuthService,
     private _errorMessage: ErrorhandlingService,
+    public dialog: MatDialog,
+    private route:Router,
   ) { }
   ngOnInit(): void {
 
@@ -57,27 +63,44 @@ export class SignupComponent implements OnInit {
       const email = this.signup.value.email;
       const password = this.signup.value.password;
       this._authService.signup(email, password).subscribe(res => {
-        // (console.log(res))
+        (console.log(res))
+
       },
         err => {
-          // console.log(err)
+          console.log(err)
           if (err) {
-            if (!err.err || !err.error.error) {
-              this.error = true
-              this.errorMsg = this.errorMessage['UNKNOWN']
-              this.errorCode = err.error.error.code;
-            } else {
+            // if (!err.err || !err.error.error) {
+            //   this.error = true
+            //   this.errorMsg = this.errorMessage['UNKNOWN']
+            //   this.errorCode = err.error.error.code;
+            // } else {
               this.error = true
               this.errorMsg = this.errorMessage[err.error.error.message]
               this.errorCode = err.error.error.code;
-            }
+            // }
           }
         }
       )
       this.submitted = false;
+      this.dialog.closeAll();
+      this.route.navigate([''])
+      
       this.signup.reset();
     }
+  } 
+  navigateLogin() {
+    this.dialog.closeAll()
+    this.dialog.open(LoginComponent,{ panelClass: 'app-full-bleed-dialog', })
+  }
+  dialogClose() {
+    this.dialog.closeAll()
   }
 
 
+
+
+
+
 }
+
+

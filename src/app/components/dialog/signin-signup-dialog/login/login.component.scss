@@ -16,5 +16,17 @@
 }
 .form-control{
     border-radius: 0;
-   
+}
+.mat-dialog-actions {
+    padding:0;
+    display: flex;
+    min-height: 52px;
+    align-items: center;
+    box-sizing: content-box;
+    margin-bottom: -24px;
+    align-content: flex-start;
+    justify-content: flex-end;
+}
+.alert{
+    margin-bottom: 1px;
 }

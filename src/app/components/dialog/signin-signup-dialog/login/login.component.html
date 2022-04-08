@@ -1,6 +1,12 @@
-<section class="h-100 gradient-form" style="background-color: #eee">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
+<!-- <section class=" gradient-form" style="background-color: #eee">
+    <div class="container py-5 h-100"> -->
+        <div mat-dialog-actions>
+            <!-- <button mat-button mat-dialog-close style="border: none; background-color: white;"><fa-icon [icon]="faClose" class="fa_icon"></fa-icon></button> -->
+            <button mat-icon-button (click)="dialogClose()" color="primary" aria-label="Example icon button with a home icon">
+                <fa-icon [icon]="faClose" class="fa_icon"></fa-icon>
+              </button>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
             <div class="col-xl-10">
                  <!-- Alert  -->
                  <div class="alert alert-danger d-flex align-items-center shadow justify-content-center" role="alert" *ngIf="error">
@@ -8,10 +14,10 @@
                     <div> <strong>Error Code {{errorCode}} occured :</strong> {{errorMsg}}</div>
                   </div>
                   <!-- Alert  -->
-                <div class="card rounded-3 text-black">
+                <div class="card rounded-3 mb-3 text-black">
                     <div class="row g-0">
                         <div class="col-lg-6">
-                            <div class="card-body p-md-5 mx-md-4">
+                            <div class="card-body py-2">
                                 <div class="text-center">
                                     <img src="../../assets/logo/logo2.png" style="width: 185px" alt="logo" />
                                     <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
@@ -40,14 +46,14 @@
                                         
                                       </div>
                                       
-                                    <div class="text-center pt-1 mb-5 pb-1">
-                                        <button class="btn btn_login btn-block fa-lg gradient-custom-2 mb-3 w-100" type="sumbit"> Login
+                                    <div class="text-center mb-1 pb-1">
+                                        <button class="btn btn_login btn-block fa-lg gradient-custom-2 mb-1 w-100" type="sumbit"> Login
                                         </button>
                                         <a class="text-muted" href="#!">Forgot password?</a>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-center pb-4">
                                         <p class="mb-0 me-2">Don't have an account?</p>
-                                        <button type="button" class="btn btn-outline-danger" routerLink="login"> Create new
+                                        <button type="button" class="btn btn-outline-danger" (click)="navigateLogin()"> Create new
                                         </button>
                                     </div>
                                 </form>
@@ -63,5 +69,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    <!-- </div>
+</section> -->
