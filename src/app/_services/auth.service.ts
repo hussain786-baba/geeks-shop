@@ -39,12 +39,17 @@ export class AuthService {
        })
      )    
   }
+  autoSignIn() {
+    // const userData = JSON.parse(localStorage.getItem('UserData'));
+  }
 
   private authenticatedUser(email: string, userId: string, token: string, expiresIn: number) {
-    const expirationDate = new Date(new Date().getDate() + expiresIn*1000)
+    const dateUnixTime = Math.round(new Date().getTime() / 1000);
+    const expirationDate = new Date((dateUnixTime + expiresIn) * 1000)
     const user = new User(email, userId, token, expirationDate);
-    console.log('user => ', user)
+    // console.log('user => ', expirationDate)
     this.user.next(user);
+    localStorage.setItem('UserData', JSON.stringify(user))
   }
 
 
