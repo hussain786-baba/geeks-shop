@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
       //       console.log(res)
       //     })
       // console.log(this.login.value)
-      console.log(this.login.value)
+      // console.log(this.login.value)
       const email = this.login.value.email;
       const password = this.login.value.password;
       this._authService.signin(email, password).subscribe(
@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
   userLoginForm() {
     this.login = this.formBuilder.group({
       'email': ['nabullah@gmail.com', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"), noWhitespaceValidator]],
-      'password': ['123456', [Validators.required, Validators.minLength(6), Validators.maxLength(11), noWhitespaceValidator]],
+      'password': ['121212', [Validators.required, Validators.minLength(6), Validators.maxLength(11), noWhitespaceValidator]],
     })
   }
   navigateLogin() {

@@ -2,7 +2,7 @@
 import { AuthResponse } from '../_models_and_interface/auth-response.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, tap } from 'rxjs';
+import { ConnectableObservable, Subject, tap } from 'rxjs';
 import { User } from '../_models_and_interface/user.model';
 
 @Injectable({
@@ -13,34 +13,45 @@ export class AuthService {
   user = new Subject<User>();
 
   constructor(
-    private http:HttpClient,
-  ) { }
+    private http: HttpClient,
+  ) {
+ 
+  }
 
-  signup(email: any,password: any) {
-   return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + this.API_KEY, {
+  signup(email: any, password: any) {
+    return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + this.API_KEY, {
       email: email,
       password: password,
       returnSecureToken: true
-   }).pipe(
-    tap(res => {
-      this.authenticatedUser(res.email,res.localId,res.idToken, + res.expiresIn);
-     })
-   )
+    }).pipe(
+      tap(res => {
+        this.authenticatedUser(res.email, res.localId, res.idToken, + res.expiresIn);
+      })
+    )
   }
 
-  signin(email:any , password:any) {
+  signin(email: any, password: any) {
     return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + this.API_KEY, {
       email: email,
       password: password,
       returnSecureToken: true
     }).pipe(
       tap(res => {
-        this.authenticatedUser(res.email,res.localId,res.idToken, + res.expiresIn);
-       })
-     )    
+        this.authenticatedUser(res.email, res.localId, res.idToken, + res.expiresIn);
+      })
+    )
   }
   autoSignIn() {
-    // const userData = JSON.parse(localStorage.getItem('UserData'));
+    const userData: any = JSON.parse(localStorage.getItem('UserData')!);
+    // console.log(userData)
+    if (!userData) {
+      return;
+    } else {
+      const userloggedIn = new User(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate))
+      if (userloggedIn.token) {
+        this.user.next(userloggedIn)
+      }
+    }
   }
 
   private authenticatedUser(email: string, userId: string, token: string, expiresIn: number) {
@@ -50,6 +61,10 @@ export class AuthService {
     // console.log('user => ', expirationDate)
     this.user.next(user);
     localStorage.setItem('UserData', JSON.stringify(user))
+
+  }
+  print() {
+    console.log('Hello')
   }
 
 
