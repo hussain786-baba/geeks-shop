@@ -1,3 +1,4 @@
+import { UserProfile } from './../_models_and_interface/userprofile.model';
 
 import { AuthResponse } from '../_models_and_interface/auth-response.interface';
 import { HttpClient } from '@angular/common/http';
@@ -10,6 +11,7 @@ import { User } from '../_models_and_interface/user.model';
 })
 export class AuthService {
   API_KEY = 'AIzaSyDUMlJxk1lrEEdnQTIwroGSKtrMP_pGZGM'
+  USER_DB = 'https://angular-assignment-2-f3ef2-default-rtdb.firebaseio.com/users.json';
   user = new BehaviorSubject<User>(null!);
 
   constructor(
@@ -19,6 +21,7 @@ export class AuthService {
   }
 
   signup(email: any, password: any) {
+    
     return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + this.API_KEY, {
       email: email,
       password: password,
@@ -69,6 +72,9 @@ export class AuthService {
   print() {
     console.log('Hello')
   }
-
+  saveUserInfo(userInfo: UserProfile) {
+    // this.userDetails.push(userInfo)
+    return this.http.post<User>(this.USER_DB, userInfo)
+  }
 
 }

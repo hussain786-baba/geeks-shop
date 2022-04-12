@@ -22,7 +22,7 @@ export class UserdetailsDBService {
   }
 
   getName() {
-    this.http.get(this.dbUrl)
+  //  return this.http.get(this.dbUrl)
   }
   
 }

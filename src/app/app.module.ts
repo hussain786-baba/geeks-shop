@@ -1,6 +1,7 @@
+import { AuthInterceptorInterceptor } from './_services/auth-interceptor.interceptor';
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,7 +52,11 @@ import { UILoader } from './_models_and_interface/UILoader.module';
     MaterialuiModule,
    
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorInterceptor, multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

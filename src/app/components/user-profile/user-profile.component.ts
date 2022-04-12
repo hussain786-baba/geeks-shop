@@ -15,7 +15,9 @@ localItem = JSON.parse(localStorage.getItem('UserData')!)
   ) { }
 
   ngOnInit(): void {
-    console.log(this._userDetails.getName());
+    // this._userDetails.getName().subscribe(res => {
+    //   console.log(res)
+    // })
   // console.log(this.localItem.email)
   }
 

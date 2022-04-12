@@ -57,27 +57,21 @@ export class SignupComponent implements OnInit {
       return
     } else if (this.signup.valid) {
       // this._userDetail.saveUserInfo(this.signup.value).subscribe(res=>{
-      //       console.log(res)
+      //   (console.log(res))
       //     })
       // console.log(this.signup.value)
       const email = this.signup.value.email;
       const password = this.signup.value.password;
       this._authService.signup(email, password).subscribe(res => {
-        (console.log(res))
+        // (console.log(res))
 
       },
         err => {
           console.log(err)
           if (err) {
-            // if (!err.err || !err.error.error) {
-            //   this.error = true
-            //   this.errorMsg = this.errorMessage['UNKNOWN']
-            //   this.errorCode = err.error.error.code;
-            // } else {
               this.error = true
               this.errorMsg = this.errorMessage[err.error.error.message]
-              this.errorCode = err.error.error.code;
-            // }
+              this.errorCode = err.error.error.code; 
           }
         }
       )
