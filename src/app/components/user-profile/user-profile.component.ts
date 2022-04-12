@@ -1,3 +1,5 @@
+import { UserdetailsDBService } from 'src/app/_services/userdetails-db.service';
+import { AuthService } from 'src/app/_services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-
-  constructor() { }
+localItem = JSON.parse(localStorage.getItem('UserData')!)
+  constructor(
+    private authService: AuthService,
+    private _userDetails:UserdetailsDBService,
+  ) { }
 
   ngOnInit(): void {
+    console.log(this._userDetails.getName());
+  // console.log(this.localItem.email)
   }
 
 }

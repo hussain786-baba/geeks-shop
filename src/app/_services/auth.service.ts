@@ -2,7 +2,7 @@
 import { AuthResponse } from '../_models_and_interface/auth-response.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ConnectableObservable, Subject, tap } from 'rxjs';
+import { BehaviorSubject, Subject, tap } from 'rxjs';
 import { User } from '../_models_and_interface/user.model';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { User } from '../_models_and_interface/user.model';
 })
 export class AuthService {
   API_KEY = 'AIzaSyDUMlJxk1lrEEdnQTIwroGSKtrMP_pGZGM'
-  user = new Subject<User>();
+  user = new BehaviorSubject<User>(null!);
 
   constructor(
     private http: HttpClient,
@@ -41,6 +41,10 @@ export class AuthService {
       })
     )
   }
+  signOut() {
+    this.user.next(null!);
+    localStorage.removeItem('UserData')
+  }
   autoSignIn() {
     const userData: any = JSON.parse(localStorage.getItem('UserData')!);
     // console.log(userData)
@@ -53,7 +57,6 @@ export class AuthService {
       }
     }
   }
-
   private authenticatedUser(email: string, userId: string, token: string, expiresIn: number) {
     const dateUnixTime = Math.round(new Date().getTime() / 1000);
     const expirationDate = new Date((dateUnixTime + expiresIn) * 1000)

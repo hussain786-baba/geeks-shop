@@ -44,4 +44,7 @@ export class SigninSignupDialogComponent implements OnInit {
   signupDialog() {
     this.dialog.open(SignupComponent,{ panelClass: 'app-full-bleed-dialog', })
   }
+  onSignOut() {
+    this._authService.signOut();
+  }
 }

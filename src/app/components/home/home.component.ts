@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // console.log(Math.round(new Date().getTime() / 1000))
-    // this.auth.autoSignIn();
+    this.auth.autoSignIn();
   }
 
 }
