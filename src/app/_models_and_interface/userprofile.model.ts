@@ -1,9 +1,7 @@
-export class UserProfile {
-    constructor(
-        public firstname: string,
-        public lastname: string,
-        public email: string,
-        private password: string,
-        private cf_password: string,
-    ) { }
+export interface UserProfile {
+    firstname: string,
+    lastname: string,
+    email: string,
+    password: string,
+    cf_password:string
 }

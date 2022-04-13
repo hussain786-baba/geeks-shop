@@ -12,7 +12,6 @@ export const environment = {
     storageBucket: "angular-assignment-2-f3ef2.appspot.com",
     messagingSenderId: "602037431254",
     appId: "1:602037431254:web:d0e1f013eeb969fc469277"
-
   }
 };
 
