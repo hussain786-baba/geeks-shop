@@ -36,3 +36,10 @@
 .card{
     border: 0;
 }
+
+@media screen and (max-width:576px){
+    .card{
+        height: 570px;
+        overflow: auto;
+    }
+}

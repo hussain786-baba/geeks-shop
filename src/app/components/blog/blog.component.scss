@@ -27,3 +27,16 @@ h3 {
     background-color: var(--primary-color);
     border: none;
 }
+.card-body .badge{
+font-size: 14px;    
+font-weight: 500;
+background: #354165;
+}
+.card-body .badge:hover{
+    color: var(--primary-color);
+    background: #ffffff;
+    outline:1px solid var(--primary-color)
+}
+h3>a{
+    color: #354165;
+}

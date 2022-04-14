@@ -51,7 +51,7 @@ export class SignupComponent implements OnInit {
     })
   }
   onSubmit() {
-    // debugger
+    debugger
     this.submitted = true
     if (this.signup.errors) {
       return
@@ -62,24 +62,28 @@ export class SignupComponent implements OnInit {
       // console.log(this.signup.value)
       const email = this.signup.value.email;
       const password = this.signup.value.password;
-      this._authService.signup(email, password).subscribe(res => {
-        // (console.log(res))
-
-      },
-        err => {
-          console.log(err)
-          if (err) {
-              this.error = true
-              this.errorMsg = this.errorMessage[err.error.error.message]
-              this.errorCode = err.error.error.code; 
+      if (this.signup.value.password === this.signup.value.cf_password) {
+        this._authService.signup(email, password).subscribe(res => {
+          // (console.log(res))
+  
+        },
+          err => {
+            console.log(err)
+            if (err) {
+                this.error = true
+                this.errorMsg = this.errorMessage[err.error.error.message]
+                this.errorCode = err.error.error.code; 
+            }
           }
-        }
-      )
-      this.submitted = false;
-      this.dialog.closeAll();
-      this.route.navigate([''])
-      
-      this.signup.reset();
+        )
+        this.submitted = false;
+        this.dialog.closeAll();
+        this.route.navigate([''])
+        
+        this.signup.reset(); 
+      } else {
+        this.passwordNotSame = true
+      }
     }
   } 
   navigateLogin() {
