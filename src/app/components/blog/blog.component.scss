@@ -1,42 +1,39 @@
 a {
-    text-decoration: none;
-    font-size: 1.2rem;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .cardinfo {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
 h3 {
-    height: auto;
+  height: auto;
 }
 
 .p-card {
-    width: 20em;
+  width: 20em;
 }
-
 .row {
-    justify-content: center;
+  justify-content: center;
 }
 
 .card-container {
-    margin-bottom: 10em;
+  margin-bottom: 10em;
 }
-
 .btn {
-    background-color: var(--primary-color);
-    border: none;
+  background-color: var(--primary-color);
+  border: none;
 }
-.card-body .badge{
-font-size: 14px;    
-font-weight: 500;
-background: #354165;
+.card-body .badge {
+  font-size: 14px;
+  font-weight: 500;
+  background: #354165;
 }
-.card-body .badge:hover{
-    color: var(--primary-color);
-    background: #ffffff;
-    outline:1px solid var(--primary-color)
+.card-body .badge:hover {
+  color: var(--primary-color);
+  background: #ffffff;
+  outline: 1px solid var(--primary-color);
 }
-h3>a{
-    color: #354165;
+h3 > a {
+  color: #354165;
 }
