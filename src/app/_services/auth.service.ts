@@ -31,6 +31,7 @@ export class AuthService {
         this.authenticatedUser(res.email, res.localId, res.idToken, + res.expiresIn);
       })
     )
+    
   }
 
   signin(email: any, password: any) {
@@ -72,9 +73,15 @@ export class AuthService {
   print() {
     console.log('Hello')
   }
-  saveUserInfo(userInfo: UserProfile) {
-    // this.userDetails.push(userInfo)
-    return this.http.post<User>(this.USER_DB, userInfo)
-  }
 
+  token() {
+    return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + this.API_KEY, {
+
+      returnSecureToken: true
+    }).pipe(
+      tap(res => {
+        this.authenticatedUser(res.email, res.localId, res.idToken, + res.expiresIn);
+      })
+    )
+ }
 }

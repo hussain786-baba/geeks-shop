@@ -38,7 +38,6 @@ export class SignupComponent implements OnInit {
     private route:Router,
   ) { }
   ngOnInit(): void {
-
     this.userSignupForm();
   }
   userSignupForm() {
@@ -51,21 +50,20 @@ export class SignupComponent implements OnInit {
     })
   }
   onSubmit() {
-    debugger
+    // debugger
     this.submitted = true
     if (this.signup.errors) {
       return
     } else if (this.signup.valid) {
-      // this._userDetail.saveUserInfo(this.signup.value).subscribe(res=>{
-      //   (console.log(res))
-      //     })
+      this._userDetail.saveUserInfo(this.signup.value).subscribe(res=>{
+        (console.log(res))
+          })
       // console.log(this.signup.value)
       const email = this.signup.value.email;
       const password = this.signup.value.password;
       if (this.signup.value.password === this.signup.value.cf_password) {
         this._authService.signup(email, password).subscribe(res => {
           // (console.log(res))
-  
         },
           err => {
             console.log(err)
