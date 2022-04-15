@@ -22,7 +22,6 @@ import { MaterialuiModule } from './_models_and_interface/materialui.module';
 import { SigninSignupDialogComponent } from './components/dialog/signin-signup-dialog/signin-signup-dialog.component';
 import { SignupComponent } from './components/dialog/signin-signup-dialog/signup/signup.component';
 import { UILoader } from './_models_and_interface/UILoader.module';
-// import { UILoader } from './_models_and_interface/UILoader.module';
 
 
 
