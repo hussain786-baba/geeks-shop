@@ -1,0 +1,137 @@
+<div class="container">
+    <div class="justify-content-center row">
+        <div class="mb-2 col-xl-8 col-lg-8 col-md-12 col-sm-12">
+            <div class="text-center mb-4"><a class="fs-5 fw-semi-bold d-block mb-4 text-primary"></a>
+                <h1 class="display-3 fw-bold mb-4">{{selectedArticle.title}}</h1><span class="mb-3 d-inline-block">{{selectedArticle.readTime}}
+                    min read</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div class="d-flex align-items-center"><img src="{{selectedArticle.profileImgURL}}" alt=""
+                        class="rounded-circle avatar-md" width="50" height="50">
+                    <div class="ms-2 lh-1">
+                        <h4 class="mb-1 "> {{selectedArticle.author}}</h4><span class="text-primary"></span>
+                    </div>
+                </div>
+                <div><span class="ms-2 text-muted btn">Share</span><a class="ms-2 text-muted"
+                       ><fa-icon class="fab fa-facebook"></fa-icon></a><a
+                        class="ms-2 text-muted"><fa-icon [icon]="fatwitter"
+                            class="fab fa-twitter"></fa-icon></a><a class="ms-2 text-muted "
+                       ><fa-icon [icon]="fafacebook" class="fab fa-linkedin"></fa-icon></a></div>
+                        <!-- <fa-icon [icon]="profileFont" class="fa_icon me-2"></fa-icon> -->
+            </div>
+        </div>
+    </div>
+    <div class="justify-content-center row">
+        <div class="mb-6 col-xl-10 col-lg-10 col-md-12 col-sm-12 text-center "><img
+                src="{{selectedArticle.imageURL}}" alt="" class="img-fluid rounded-3" style="width: 80%;"></div>
+    </div>
+    <div class="justify-content-center row">
+        <div class="mb-2 col-xl-8 col-lg-8 col-md-12 col-sm-12">
+            <div>
+                <p></p>
+                <h4>Design Systems for Developers Geeks a modern, clean and accessibility oriented design system for
+                    developing fast and powerful web interfaces.</h4>
+                <br>Condimentum leo utipsum euismod feugiatn elntum sapiennonser variusmi elementum necunc elementum
+                velitnon tortor convallis variusa placerat nequhse.
+                Mauris varius ullamcorper tincidsellus egestas innisivel sollicituullam feugiate facilisis ones
+                Suspendisse blandit sedtincinean.<br>
+                Mauris varius ullamcorper tincidsellus egestas innisivel sollicituullam feugiate facilisis ones velleo
+                finibus maximus nequsese sedmattis auspendisse<u>
+                    duimetus ullamcorper faucibuse blandit</u>sedtincinean.<p></p><br>
+                <hr><br>
+                <blockquote style="text-align: center;">
+                    <h2 style="color: rgb(117, 79, 254);">"Failure will never overtake me if my determination to succeed
+                        is strong enough."</h2>
+                    <footer>
+                        <cite title="Source Title">Og Mandino</cite>
+                    </footer>
+                </blockquote><br>
+                <hr><br>
+                <div>
+                    <p>Condimentum leo utipsum euismod feugiatn elntum
+                        <strong>sapiennonser variusmi elementum </strong>necunc elem entum velitnon tortor convallis
+                        variusa placerat nequhse. Quis eu Lorem irure magna.
+                        Ex labore reprehenderit veniam irure id nostrud velit. Minim aliquip cillum laborum qui Lorem
+                        eu.
+                    </p>
+                    <p>Sint officia nulla deserunt voluptate non amet consequat ipsum tempor. Nulla id cupidatat ipsum
+                        occaecat. Aute ad et fugiat velit sunt qui veniam labore elit ipsum commodo proident.
+                        Sit tempor consectetur commodo laborum mollit. Enim sint nostrud nisi in ad aliqua laboris ad
+                        non.</p>
+                </div>
+                <div>
+                    <h3>Unordered Lists (Nested)</h3><br>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Consectetur adipiscing elit</li>
+                        <li>Integer molestie lorem at massa</li>
+                        <li>Facilisis in pretium nisl aliquet</li>
+                        <li>Nulla volutpat aliquam velit<ul>
+                                <li>Phasellus iaculis neque</li>
+                                <li>Purus sodales ultricies</li>
+                                <li>Vestibulum laoreet porttitor sem</li>
+                                <li>Ac tristique libero volutpat at</li>
+                            </ul>
+                        </li>
+                        <li>Faucibus porta lacus fringilla vel</li>
+                        <li>Aenean sit amet erat nunc</li>
+                        <li>Eget porttitor lorem</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ordered List (Nested)</h3>
+                    <ol>
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Consectetur adipiscing elit</li>
+                        <li>Integer molestie lorem at massa</li>
+                        <li>Facilisis in pretium nisl aliquet</li>
+                        <li>Nulla volutpat aliquam velit<ol>
+                                <li>Phasellus iaculis neque</li>
+                                <li>Purus sodales ultricies</li>
+                                <li>Vestibulum laoreet porttitor sem</li>
+                                <li>Ac tristique libero volutpat at</li>
+                            </ol>
+                        </li>
+                        <li>Faucibus porta lacus fringilla vel</li>
+                        <li>Aenean sit amet erat nunc</li>
+                        <li>Eget porttitor lorem</li>
+                    </ol>
+                </div>
+                <div>
+                    <h2>Image </h2>
+                    <p>Sint officia nulla deserunt voluptate non amet consequat ipsum tempor. Nulla id cupidatat ipsum
+                        occaecat. Aute ad et fugiat velit sunt qui veniam labore elit ipsum commodo proident.
+                        Sit tempor consectetur commodo laborum mollit. Enim sint nostrud nisi in ad aliqua laboris ad
+                        non.</p>
+                    <img src="https://codescandy.com/geeks-bootstrap-5/assets/images/blog/center-img.jpg" alt=""
+                        style="width:100%">
+                </div>
+            </div>
+            <hr class="mt-8 mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div class="d-flex align-items-center"><img src="{{selectedArticle.profileImgURL}}" alt=""
+                        class="rounded-circle avatar-md" width="50" height="50">
+                    <div class="ms-2 lh-1">
+                        <h4 class="mb-1 ">{{selectedArticle.author}}</h4><span class="text-primary"></span>
+                    </div>
+                </div>
+                <div><span class="ms-2 text-muted btn">Share</span><a class="ms-2 text-muted"
+                    ><fa-icon class="fab fa-facebook"></fa-icon></a><a
+                     class="ms-2 text-muted"><fa-icon [icon]="fatwitter"
+                         class="fab fa-twitter"></fa-icon></a><a class="ms-2 text-muted "
+                    ><fa-icon [icon]="fafacebook" class="fab fa-linkedin"></fa-icon></a></div>
+            </div>
+            <div class="py-12">
+                <div class="text-center mb-6">
+                    <h2 class="display-4 fw-bold">Sign up for our Newsletter</h2>
+                    <p class="mb-0 lead">Join our newsletter and get resources delivered straight to your inbox.</p>
+                </div>
+                <form class="row px-md-20 mt-3 mb-5">
+                    <div class="mb-3 col ps-0 ms-2 ms-md-0"><input placeholder="Email Address" type="email"
+                            id="formBasicEmail" class="form-control"></div>
+                    <div class="mb-3 col-auto ps-0"> <button mat-raised-button color="warn">Submit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

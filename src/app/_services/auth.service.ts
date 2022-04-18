@@ -1,9 +1,10 @@
+import { ErrorhandlingService } from './errorhandling.service';
 import { UserProfile } from './../_models_and_interface/userprofile.model';
 
 import { AuthResponse } from '../_models_and_interface/auth-response.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject, tap } from 'rxjs';
+import { BehaviorSubject, catchError, Subject, tap } from 'rxjs';
 import { User } from '../_models_and_interface/user.model';
 
 @Injectable({
@@ -16,12 +17,13 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
+    private _errorService:ErrorhandlingService
   ) {
- 
+
   }
 
   signup(email: any, password: any) {
-    
+
     return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + this.API_KEY, {
       email: email,
       password: password,
@@ -31,7 +33,7 @@ export class AuthService {
         this.authenticatedUser(res.email, res.localId, res.idToken, + res.expiresIn);
       })
     )
-    
+
   }
 
   signin(email: any, password: any) {
@@ -74,14 +76,11 @@ export class AuthService {
     console.log('Hello')
   }
 
-  token() {
-    return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + this.API_KEY, {
-
+  changePassword(data: any) {
+    return this.http.post<any>('https://identitytoolkit.googleapis.com/v1/accounts:update?key=' + this.API_KEY, {
+      idToken: data.idToken,
+      password: data.password,
       returnSecureToken: true
-    }).pipe(
-      tap(res => {
-        this.authenticatedUser(res.email, res.localId, res.idToken, + res.expiresIn);
-      })
-    )
- }
+    })
+  }
 }

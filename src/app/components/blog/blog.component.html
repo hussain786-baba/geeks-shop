@@ -1,457 +1,217 @@
 <div class="pt-9 pb-9 bg-white ">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12  ">
-                <div class="text-center mb-5 mt-4">
-                    <h1 class=" display-2 fw-bold">Geeks Newsroom</h1>
-                    <p class="lead">Our features, journey, tips and us being us. Lorem ipsum dolor sit amet, accumsan in, tempor dictum neque.</p>
-                </div>
-                <form class="row px-md-20">
-                    <div class="mb-3 col ps-0 ms-2 ms-md-0"><input placeholder="Email Address" type="email" id="formBasicEmail" class="form-control"></div>
-                    <div class="mb-3 col-auto ps-0"><button type="submit" class="btn btn-primary">Submit</button></div>
-                </form>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12  ">
+        <div class="text-center mb-5 mt-4">
+          <h1 class=" display-2 fw-bold">Geeks Newsroom</h1>
+          <p class="lead">Our features, journey, tips and us being us. Lorem ipsum dolor sit amet, accumsan in, tempor
+            dictum neque.</p>
         </div>
-    </div> 
+        <form class="row px-md-20">
+          <div class="mb-3 col ps-0 ms-2 ms-md-0"><input placeholder="Email Address" type="email" id="formBasicEmail"
+              class="form-control"></div>
+          <div class="mb-3 col-auto ps-0"><button type="submit" class="btn btn-primary">Submit</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Section 2  -->
 <div class="pb-12 bg-white">
-    <div class="container mt-5 card-container">
-        <!-- <div class="row">
-            <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-12 p-card">
-                <div class="mb-4 shadow-lg card">
-                    <a href="/marketing/blog/article-single/3"><img class="card-img-top rounded-top-md img-fluid" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"></a>
-                    <div class="card-body">
+  <div class="container mt-5 card-container">
+    <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-md-4 gy-2">
 
-                        <h3><a class="text-inherit" href="/marketing/blog/article-single/3">What is PHP Function? For Beginner’s Guide</a></h3>
-                        <p> Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum </p>
-                        <div class="align-items-center g-0 mt-4 row cardinfo">
-
-                            <div class="col lh-1 col">
-                                <h5 class="mb-1">Lisa Menon</h5>
-                                <p class="fs-6 mb-0">September 06, 2020</p>
-                            </div>
-                            <div class="col-auto col">
-                                <p class="fs-6 mb-0">8 Min Read</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Item -->
+        <div class="col pb-3"  *ngFor="let article of blogArray">
+          <article class="card border-0 shadow-sm h-100">
+            <div class="position-relative">
+              <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+              <a [routerLink]="['/blog-article', article['id']]"
+                class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
+              </a>
+              <img src="{{ article['imageURL'] }}" class="card-img-top" alt="Image" height="280">
             </div>
-            <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-12 p-card">
-                <div class="mb-4 shadow-lg card">
-                    <a href="/marketing/blog/article-single/5"><img class="card-img-top rounded-top-md img-fluid" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"></a>
-                    <div class="card-body">
-
-                        <h3><a class="text-inherit" href="/marketing/blog/article-single/5">What is machine learning and how does it work?</a></h3>
-                        <p> Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum.ipsum dolor sit ipsum </p>
-                        <div class="align-items-center g-0 mt-4 row cardinfo">
-
-                            <div class="col lh-1 col">
-                                <h5 class="mb-1">Loran Sipon</h5>
-                                <p class="fs-6 mb-0">September 08, 2020</p>
-                            </div>
-                            <div class="col-auto col">
-                                <p class="fs-6 mb-0">10 Min Read</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="card-body pb-4">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">{{article['tutorial']}}</a>
+                <span class="fs-sm text-muted"> {{article['date']}} </span>
+              </div>
+              <h3 class="h5 mb-0">
+                <a [routerLink]="['/blog-article', article['id']]"> {{article['title']}}</a>
+              </h3>
             </div>
-            <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-12 p-card">
-                <div class="mb-4 shadow-lg card">
-                    <a href="/marketing/blog/article-single/10"><img class="card-img-top rounded-top-md img-fluid" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"></a>
-                    <div class="card-body">
-
-                        <h3><a class="text-inherit" href="/marketing/blog/article-single/10">Developing Agile Leadership</a></h3>
-                        <p> Debitis ipsam ratione molestias dolores qui asperiores consequatur facilis error. Lorem ipsum dolor sit amet. ipsum dolor sit</p>
-                        <div class="align-items-center g-0 mt-4 row cardinfo">
-
-                            <div class="col lh-1 col">
-                                <h5 class="mb-1">Jerry Dom</h5>
-                                <p class="fs-6 mb-0">September 13, 2020</p>
-                            </div>
-                            <div class="col-auto col">
-                                <p class="fs-6 mb-0">12 Min Read</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="card-footer py-4">
+              <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                <img src="{{ article['profileImgURL'] }}" class="rounded-circle me-3"
+                  width="50" height="50" alt="Avatar">
+                {{article['author']}}
+              </a>
             </div>
-            <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-12 p-card">
-                <div class="mb-4 shadow-lg card">
-                    <a href="/marketing/blog/article-single/11"><img class="card-img-top rounded-top-md img-fluid" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"></a>
-                    <div class="card-body">
+          </article>
+        </div>
 
-                        <h3><a class="text-inherit" href="/marketing/blog/article-single/11">Getting started the Web App JavaScript in 2020</a></h3>
-                        <p> Debitis ipsam ratione molestias dolores qui asperiores consequatur facilis error. </p>
-                        <div class="align-items-center g-0 mt-4 row cardinfo">
-
-                            <div class="col lh-1 col">
-                                <h5 class="mb-1">Dustin Warren</h5>
-                                <p class="fs-6 mb-0">September 13, 2020</p>
-                            </div>
-                            <div class="col-auto col">
-                                <p class="fs-6 mb-0">6 Min Read</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-12 p-card">
-                <div class="mb-4 shadow-lg card">
-                    <a href="/marketing/blog/article-single/13"><img class="card-img-top rounded-top-md img-fluid" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"></a>
-                    <div class="card-body">
-
-                        <h3><a class="text-inherit" href="/marketing/blog/article-single/13">What is Cyber Security? A Beginner’s Guide</a></h3>
-                        <p> Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum </p>
-                        <div class="align-items-center g-0 mt-4 row cardinfo">
-
-                            <div class="col lh-1 col">
-                                <h5 class="mb-1">Maria Pinto</h5>
-                                <p class="fs-6 mb-0">September 07, 2020</p>
-                            </div>
-                            <div class="col-auto col">
-                                <p class="fs-6 mb-0">15 Min Read</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-12 p-card">
-                <div class="mb-4 shadow-lg card">
-                    <a href="/marketing/blog/article-single/14"><img class="card-img-top rounded-top-md img-fluid" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"></a>
-                    <div class="card-body">
-
-                        <h3><a class="text-inherit" href="/marketing/blog/article-single/14">The Best DevOps Tools for Your Application Lifecycle</a></h3>
-                        <p> Inventore pariatur veritatis maxime fugiat sint dolorem quas culpa officiis nemo quis! </p>
-                        <div class="align-items-center g-0 mt-4 row cardinfo">
-
-                            <div class="col lh-1 col">
-                                <h5 class="mb-1">Dustin Warren</h5>
-                                <p class="fs-6 mb-0">September 09, 2020</p>
-                            </div>
-                            <div class="col-auto col">
-                                <p class="fs-6 mb-0">12 Min Read</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-12 p-card">
-                <div class="mb-4 shadow-lg card">
-                    <a href="/marketing/blog/article-single/17"><img class="card-img-top rounded-top-md img-fluid" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"></a>
-                    <div class="card-body">
-
-                        <h3><a class="text-inherit" href="/marketing/blog/article-single/17">How to become WebDesinger?</a></h3>
-                        <p> Vero expedita voluptatibus cumque sunt ullam cum natus, vitae provident debitis pariatur? </p>
-                        <div class="align-items-center g-0 mt-4 row cardinfo">
-
-                            <div class="col lh-1 col">
-                                <h5 class="mb-1">Lucy Kolin</h5>
-                                <p class="fs-6 mb-0">September 05, 2020</p>
-                            </div>
-                            <div class="col-auto col">
-                                <p class="fs-6 mb-0">20 Min Read</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-12 p-card">
-                <div class="mb-4 shadow-lg card">
-                    <a href="/marketing/blog/article-single/20"><img class="card-img-top rounded-top-md img-fluid" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"></a>
-                    <div class="card-body">
-
-                        <h3><a class="text-inherit" href="/marketing/blog/article-single/20">How to Become a Data Scientist?</a></h3>
-                        <p> Nulla voluptate in facere saepe est alias et iste, accusantium sint enim! </p>
-                        <div class="align-items-center g-0 mt-4 row cardinfo">
-
-                            <div class="col lh-1 col">
-                                <h5 class="mb-1">Miron Sulla</h5>
-                                <p class="fs-6 mb-0">September 05, 2020</p>
-                            </div>
-                            <div class="col-auto col">
-                                <p class="fs-6 mb-0">20 Min Read</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex col-xl-4 col-lg-4 col-md-6 col-sm-12 p-card">
-                <div class="mb-4 shadow-lg card">
-                    <a href="/marketing/blog/article-single/22"><img class="card-img-top rounded-top-md img-fluid" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"></a>
-                    <div class="card-body">
-
-                        <h3><a class="text-inherit" href="/marketing/blog/article-single/22">How to become modern Stack Developer in 2020</a></h3>
-                        <p> Lorem ipsum dolor sit amet, accu msan in, tempor dictum nequrem ipsum </p>
-                        <div class="align-items-center g-0 mt-4 row cardinfo">
-
-                            <div class="col lh-1 col">
-                                <h5 class="mb-1">Reva Yokk</h5>
-                                <p class="fs-6 mb-0">September 05, 2020</p>
-                            </div>
-                            <div class="col-auto col">
-                                <p class="fs-6 mb-0">20 Min Read</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-md-4 gy-2">
-
-            <!-- Item -->
-            <div class="col pb-3">
+      
+      <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                    <i class="bx bx-bookmark"></i>
+                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="badge fs-sm text-nav text-decoration-none">Business</a>
-                    <span class="fs-sm text-muted">May 19, 2021</span>
-                  </div>
-                  <h3 class="h5 mb-0">
-                    <a href="blog-single.html">5 Bad Landing Page Examples &amp; How We Would Fix Them</a>
-                  </h3>
-                </div>
-                <div class="card-footer py-4">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
-                    <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
-                    Jerome Bell
-                  </a>
-                </div>
-              </article>
-            </div>
-  
-            <!-- Item -->
-            <div class="col pb-3">
-              <article class="card border-0 shadow-sm h-100">
-                <div class="position-relative">
-                  <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                    <i class="bx bx-bookmark"></i>
-                  </a>
-                  <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
-                </div>
-                <div class="card-body pb-4">
-                  <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="badge fs-sm text-nav text-decoration-none">Digital</a>
-                    <span class="fs-sm text-muted">Sep 28, 2021</span>
-                  </div>
-                  <h3 class="h5 mb-0">
-                    <a href="blog-single.html">Why UX Design Matters and How it Affects Ranking</a>
-                  </h3>
-                </div>
-                <div class="card-footer py-4">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
-                    <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
-                    Jerome Bell
-                  </a>
-                </div>
-              </article>
-            </div>
-  
-            <!-- Item -->
-            <div class="col pb-3">
-              <article class="card border-0 shadow-sm h-100">
-                <div class="position-relative">
-                  <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                    <i class="bx bx-bookmark"></i>
-                  </a>
-                  <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
-                </div>
-                <div class="card-body pb-4">
-                  <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="badge fs-sm text-nav text-decoration-none">Business</a>
-                    <span class="fs-sm text-muted">Sep 16, 2021</span>
-                  </div>
-                  <h3 class="h5 mb-0">
-                    <a href="blog-single.html">This Week in Search: New Limits and Exciting Features</a>
-                  </h3>
-                </div>
-                <div class="card-footer py-4">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
-                    <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
-                    Ralph Edwards
-                  </a>
-                </div>
-              </article>
-            </div>
-  
-            <!-- Item -->
-            <div class="col pb-3">
-              <article class="card border-0 shadow-sm h-100">
-                <div class="position-relative">
-                  <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                    <i class="bx bx-bookmark"></i>
-                  </a>
-                  <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
-                </div>
-                <div class="card-body pb-4">
-                  <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
+                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
                     <span class="fs-sm text-muted">12 hours ago</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a href="blog-single.html">Five Effective Lead Generation Techniques For Your Business</a>
+                    <a [routerLink]="['/blog-article', article['id']]">Five Effective Lead Generation Techniques For Your Business</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Esther Howard
                   </a>
                 </div>
               </article>
-            </div>
-  
-            <!-- Item -->
-            <div class="col pb-3">
+            </div> -->
+
+      <!-- Item -->
+      <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                    <i class="bx bx-bookmark"></i>
+                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="badge fs-sm text-nav text-decoration-none">Digital</a>
+                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Digital</a>
                     <span class="fs-sm text-muted">Oct 9, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a href="blog-single.html">Inclusive Marketing: Why and How Does it Work?</a>
+                    <a [routerLink]="['/blog-article', article['id']]">Inclusive Marketing: Why and How Does it Work?</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Jane Cooper
                   </a>
                 </div>
               </article>
-            </div>
-  
-            <!-- Item -->
-            <div class="col pb-3">
+            </div> -->
+
+      <!-- Item -->
+      <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                    <i class="bx bx-bookmark"></i>
+                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="badge fs-sm text-nav text-decoration-none">Marketing</a>
+                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Marketing</a>
                     <span class="fs-sm text-muted">Apr 2, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a href="blog-single.html">How Agile is Your Forecasting Process?</a>
+                    <a [routerLink]="['/blog-article', article['id']]">How Agile is Your Forecasting Process?</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Albert Flores
                   </a>
                 </div>
               </article>
             </div>
-  
-            <!-- Item -->
-            <div class="col pb-3">
+   -->
+      <!-- Item -->
+      <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                    <i class="bx bx-bookmark"></i>
+                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
+                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
                     <span class="fs-sm text-muted">Sep 3, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a href="blog-single.html">Your Guide to Optimising A JavaScript-enabled Website</a>
+                    <a [routerLink]="['/blog-article', article['id']]">Your Guide to Optimising A JavaScript-enabled Website</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Ralph Edwards
                   </a>
                 </div>
               </article>
             </div>
-  
-            <!-- Item -->
-            <div class="col pb-3">
+   -->
+      <!-- Item -->
+      <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                    <i class="bx bx-bookmark"></i>
+                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
+                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
                     <span class="fs-sm text-muted">Sep 10, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a href="blog-single.html">A Study on Smartwatch Design Qualities and People’s Preferences</a>
+                    <a [routerLink]="['/blog-article', article['id']]">A Study on Smartwatch Design Qualities and People’s Preferences</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Esther Howard
                   </a>
                 </div>
               </article>
-            </div>
-  
-            <!-- Item -->
-            <div class="col pb-3">
+            </div> -->
+
+      <!-- Item -->
+      <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
-                    <i class="bx bx-bookmark"></i>
+                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="badge fs-sm text-nav text-decoration-none">Strategy</a>
+                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Strategy</a>
                     <span class="fs-sm text-muted">Sep 16, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a href="blog-single.html">This Long-Awaited Technology May Finally Change the World</a>
+                    <a [routerLink]="['/blog-article', article['id']]">This Long-Awaited Technology May Finally Change the World</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Ralph Edwards
                   </a>
                 </div>
               </article>
-            </div>
-          </div>
+            </div> -->
     </div>
+  </div>
 </div>

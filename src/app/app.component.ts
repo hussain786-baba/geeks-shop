@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     // this.auth.print();
-    this.auth.autoSignIn();
+    // console.log(this.auth.autoSignIn())
   }
 
 }

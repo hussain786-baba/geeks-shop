@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { BlogModel } from '../../appModel/blog';
 
 @Component({
   selector: 'app-blog',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-
-  constructor() { }
+  blogArray = []
+  constructor(
+   private _blog:BlogModel
+  ) { }
 
   ngOnInit(): void {
+    this.blogArray = this._blog.articles;
+    console.log(this.blogArray)
   }
 
 }
