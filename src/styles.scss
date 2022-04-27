@@ -1,3 +1,38 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$angular-assignment-primary: mat.define-palette(mat.$indigo-palette);
+$angular-assignment-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$angular-assignment-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$angular-assignment-theme: mat.define-light-theme((
+  color: (
+    primary: $angular-assignment-primary,
+    accent: $angular-assignment-accent,
+    warn: $angular-assignment-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($angular-assignment-theme);
+
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material'as mat;
@@ -24,9 +59,9 @@ $angular-assignment-theme: mat.define-light-theme((color: (primary: $angular-ass
       warn: $angular-assignment-warn,
     )));
 
-mat-dialog-container {
-  background: #d1e7dd !important;
-}
+// mat-dialog-container {
+//   background: #d1e7dd !important;
+// }
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -80,10 +115,12 @@ mat-dialog-container {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-*{
+
+* {
 
   font-family: var(--primaryfont)
 }
+
 html,
 body {
   height: 100%;
@@ -95,41 +132,74 @@ body {
 }
 
 .app-full-bleed-dialog .mat-dialog-container {
-  padding: 0;
-  overflow: hidden;
-  // border-radius: 2.25rem;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
-// Utility Classes 
-.fw-400 {
-  font-weight: 400 !important;
+
+.login .mat-dialog-container {
+  padding: 0 !important;
+  overflow: hidden !important;
+  width: 70% !important;
+  margin: auto !important;
 }
+
+.product-page .mat-dialog-container {
+  padding: 0 !important;
+  // overflow: hidden;
+  transform: none !important;
+
+  margin:17px auto !important;
+}
+
+// Utility Classes  
+.fw-600 {
+  font-weight: 600 !important;
+}
+
 .fw-700 {
   font-weight: 700 !important;
 }
-.fs-24{
+.fw-400{
+  font-weight: 400 !important;
+}
+
+.fs-24 {
   font-size: 24px !important;
 }
+
 .fs-20 {
   font-size: 20px !important;
 }
+
 .fs-16 {
   font-size: 16px !important;
 }
+
 .fs-14 {
   font-size: 14px !important;
 }
+
 .fs-32 {
   font-size: 32px !important;
 }
+
 .lh-16 {
   line-height: 16px !important;
 }
+
 .lh-32 {
   line-height: 32px !important;
 }
+
 .lh-24 {
   line-height: 24px !important;
 }
-.p-18{
-    padding: 18px !important;
+
+.p-18 {
+  padding: 18px !important;
 }
+.primary-color{
+color: var(--primary-color);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

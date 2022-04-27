@@ -65,14 +65,14 @@
         </div>
         <div class="position-relative d-flex flex-wrap card-section">
             <div class="card" style="width: 18rem;">
-                <a href="" routerLink="/product-page"> <img class="card-img-top" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"
+                <a href="" (click)="$event.preventDefault();productDetails()"> <img class="card-img-top" src="../../assets/images/photo-1508976594853-a50fce4ad397.avif"
                     alt="Card image cap"></a>
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <h3 class="card-title fw-400 fs-24 lh-16 cursor-pointer">Laravel</h3>
+                        <h3 class="card-title fw-600 fs-24 lh-16 cursor-pointer">Laravel</h3>
                         <span class="price fw-700 fs-20 lh-16">$100</span>
                     </div>
-                    <p class="fw-400 fs-16 lh-16 ">Author |&nbsp; <span class="fw-700">Joe Doe</span> </p>
+                    <p class="fw-600 fs-16 lh-16 ">Author |&nbsp; <span class="fw-700">Joe Doe</span> </p>
                     <p class="card-text">Laravel: The Ultimate Beginner’s Guide to Learn Laravel Step by Step</p>
                     <a href="#" class="btn btn-primary">Buy Now</a>
                 </div>
@@ -116,10 +116,10 @@
                 alt="Card image cap"></a>
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <h3 class="card-title fw-400 fs-24 lh-16 cursor-pointer" routerLink="/product-page ">Laravel</h3>
+                        <h3 class="card-title fw-600 fs-24 lh-16 cursor-pointer" routerLink="/product-page ">Laravel</h3>
                         <span class="fw-700 fs-20 lh-16">$100</span>
                     </div>
-                    <p class="fw-400 fs-16 lh-16 "> Author |&nbsp; <span class="fw-700">Joe Doe</span> </p>
+                    <p class="fw-600 fs-16 lh-16 "> Author |&nbsp; <span class="fw-700">Joe Doe</span> </p>
                     <p class="card-text ">Laravel: The Ultimate Beginner’s Guide to Learn Laravel Step by Step</p>
                     <a href="#" class="btn btn-primary">Buy Now</a>
                 </div>

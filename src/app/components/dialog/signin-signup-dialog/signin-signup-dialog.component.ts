@@ -39,7 +39,7 @@ export class SigninSignupDialogComponent implements OnInit {
     })
   }
   signinDialog() {
-    this.dialog.open(LoginComponent,{ panelClass: 'app-full-bleed-dialog', })
+    this.dialog.open(LoginComponent,{ panelClass: 'login'})
   }
   signupDialog() {
     this.dialog.open(SignupComponent,{ panelClass: 'app-full-bleed-dialog', })

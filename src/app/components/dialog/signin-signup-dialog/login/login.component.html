@@ -1,23 +1,18 @@
 <!-- <section class=" gradient-form" style="background-color: #eee">
     <div class="container py-5 h-100"> -->
-        <div mat-dialog-actions>
-            <!-- <button mat-button mat-dialog-close style="border: none; background-color: white;"><fa-icon [icon]="faClose" class="fa_icon"></fa-icon></button> -->
-            <button mat-icon-button (click)="dialogClose()" color="primary" aria-label="Example icon button with a home icon">
-                <fa-icon [icon]="faClose" class="fa_icon"></fa-icon>
-              </button>
-        </div>
+       
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-xl-10">
+            <div class="col-xl-12">
                  <!-- Alert  -->
                  <div class="alert alert-danger d-flex align-items-center shadow justify-content-center" role="alert" *ngIf="error">
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
                     <div> <strong>Error Code {{errorCode}} occured :</strong> {{errorMsg}}</div>
                   </div>
                   <!-- Alert  -->
-                <div class="card rounded-3 mb-3 text-black">
+                <div class="card rounded-3 text-black">
                     <div class="row g-0">
                         <div class="col-lg-6">
-                            <div class="card-body py-2">
+                            <div class="card-body py-2 position-relative">
                                 <div class="text-center">
                                     <img src="../../assets/logo/logo2.png" style="width: 185px" alt="logo" />
                                     <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
@@ -60,6 +55,12 @@
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex align-items-center about">
+                            <div mat-dialog-actions class="closeBtn">
+                                <!-- <button mat-button mat-dialog-close style="border: none; background-color: white;"><fa-icon [icon]="faClose" class="fa_icon"></fa-icon></button> -->
+                                <button mat-icon-button (click)="dialogClose()" color="primary" aria-label="Example icon button with a home icon">
+                                    <fa-icon [icon]="faClose" class="fa_icon"></fa-icon>
+                                  </button>
+                            </div>
                             <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                 <h4 class="mb-4">We are more than just a company</h4>
                                 <p class="small mb-0"> Geek is feature-rich components and beautifully Bootstrap UIKit for developers, built with bootstrap responsive framework.</p>
