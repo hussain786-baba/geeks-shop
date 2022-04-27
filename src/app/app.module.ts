@@ -1,3 +1,5 @@
+// import { SharedModule } from './shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AuthInterceptorInterceptor } from './_services/auth-interceptor.interceptor';
 import { NgModule, Component } from '@angular/core';
@@ -53,6 +55,8 @@ import { AlertComponent } from './components/dialog/alert/alert.component';
     HttpClientModule,
     UILoader,
     MaterialuiModule,
+    MatIconModule,
+    // SharedModule
    
   ],
   providers: [

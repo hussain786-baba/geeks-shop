@@ -1,6 +1,6 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog,  } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-product-page',
@@ -16,12 +16,12 @@ export class ProductPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  navigateProductDetails() {
-    this.route.navigate(['/product-details']);
+  navigatePayment() {
+    this.route.navigate(['/payment-page']);
     this.dialog.closeAll();
   }
-  payment() {
-    this.route.navigate(['/payment-page'])
-    this.dialog.closeAll()
+  navigateProDetails() {
+    this.route.navigate(['/product-details'])
+    this.dialog.closeAll();
   }
 }
