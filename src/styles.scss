@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use '@angular/material'as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,17 +19,15 @@ $angular-assignment-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$angular-assignment-theme: mat.define-light-theme((
-  color: (
-    primary: $angular-assignment-primary,
-    accent: $angular-assignment-accent,
-    warn: $angular-assignment-warn,
-  )
-));
+$angular-assignment-theme: mat.define-light-theme((color: (primary: $angular-assignment-primary,
+      accent: $angular-assignment-accent,
+      warn: $angular-assignment-warn,
+    )));
 
 mat-dialog-container {
   background: #d1e7dd !important;
 }
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -42,51 +39,97 @@ mat-dialog-container {
 /* Importing Bootstrap SCSS file. */
 
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap');
 
 /* Importing Datepicker SCSS file. */
 
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
 :root {
-    --primary-color: #F06543;
-    --primary-platinim: #e8e9eb;
-    --pimary-oynx: #313638;
-    --primary-aliceblue: #E9F1F7;
-    --secondary-oynx: #131B23;
-    --primary-curve: #0099ff;
+  --primary-color: #F06543;
+  --primary-platinim: #e8e9eb;
+  --pimary-oynx: #313638;
+  --primary-aliceblue: #E9F1F7;
+  --secondary-oynx: #131B23;
+  --primary-curve: #0099ff;
+  --primaryfont: 'Work Sans', sans-serif;
 }
 
 // Scroll Bar 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 40px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--pimary-oynx);
-    border-radius: 10px;
-    
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  width: 10px;
+  height: 40px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--pimary-oynx);
+  border-radius: 10px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+*{
+
+  font-family: var(--primaryfont)
+}
+html,
+body {
+  height: 100%;
+
+}
+
+::ng-deep body {
+  margin: 0;
+}
 
 .app-full-bleed-dialog .mat-dialog-container {
-  padding:0;
-  overflow:hidden;
+  padding: 0;
+  overflow: hidden;
   // border-radius: 2.25rem;
+}
+// Utility Classes 
+.fw-400 {
+  font-weight: 400 !important;
+}
+.fw-700 {
+  font-weight: 700 !important;
+}
+.fs-24{
+  font-size: 24px !important;
+}
+.fs-20 {
+  font-size: 20px !important;
+}
+.fs-16 {
+  font-size: 16px !important;
+}
+.fs-14 {
+  font-size: 14px !important;
+}
+.fs-32 {
+  font-size: 32px !important;
+}
+.lh-16 {
+  line-height: 16px !important;
+}
+.lh-32 {
+  line-height: 32px !important;
+}
+.lh-24 {
+  line-height: 24px !important;
+}
+.p-18{
+    padding: 18px !important;
 }

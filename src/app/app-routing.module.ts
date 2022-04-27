@@ -1,3 +1,4 @@
+import { ProductPageComponent } from './shared/product-page/product-page.component';
 import { ChangepasswordComponent } from './components/user-profile/changepassword/changepassword.component';
 
 import { AuthGuard } from './guard/auth.guard';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'signin-signup-dialog',  component: SigninSignupDialogComponent },
   { path: 'user-profile',canActivate:[AuthGuard], component: UserProfileComponent },
   { path: 'changepassword',canActivate:[AuthGuard], component: ChangepasswordComponent },
+  { path: 'product-page',component: ProductPageComponent },
 ];
 
 @NgModule({
