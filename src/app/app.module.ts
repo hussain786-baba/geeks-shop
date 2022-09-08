@@ -26,6 +26,8 @@ import { UILoader } from './_models_and_interface/UILoader.module';
 import { BlogModel } from './appModel/blog';
 import { ChangepasswordComponent } from './components/user-profile/changepassword/changepassword.component';
 import { AlertComponent } from './components/dialog/alert/alert.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { NzZorroModule } from './_models_and_interface/nz-zorro.module';
 
 
 
@@ -44,6 +46,7 @@ import { AlertComponent } from './components/dialog/alert/alert.component';
     SigninSignupDialogComponent,
     ChangepasswordComponent,
     AlertComponent,
+    ShopComponent,
  
   ],
   imports: [
@@ -57,6 +60,7 @@ import { AlertComponent } from './components/dialog/alert/alert.component';
     MaterialuiModule,
     MatIconModule,
     // SharedModule
+    NzZorroModule
    
   ],
   providers: [

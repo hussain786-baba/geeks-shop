@@ -1,3 +1,4 @@
+import { ShopComponent } from './components/shop/shop.component';
 import { PaymentPageComponent } from './shared/components/payment-page/payment-page.component';
 import { ProductDetailsComponent } from './shared/components/product-details/product-details.component';
 import { ChangepasswordComponent } from './components/user-profile/changepassword/changepassword.component';
@@ -14,18 +15,27 @@ import { ProductPageComponent } from './shared/components/product-page/product-p
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: BlogComponent },
-  {path : 'blog-article/:id', component:BlogArticleComponent},
+  { path: 'blog-article/:id', component: BlogArticleComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'signin-signup-dialog',  component: SigninSignupDialogComponent },
-  { path: 'user-profile',canActivate:[AuthGuard], component: UserProfileComponent },
-  { path: 'changepassword',canActivate:[AuthGuard], component: ChangepasswordComponent },
-  { path: 'product-page',component: ProductPageComponent },
-  { path: 'product-details',component: ProductDetailsComponent },
-  { path: 'payment-page',component: PaymentPageComponent },
+  { path: 'signin-signup-dialog', component: SigninSignupDialogComponent },
+  {
+    path: 'user-profile',
+    canActivate: [AuthGuard],
+    component: UserProfileComponent,
+  },
+  {
+    path: 'changepassword',
+    canActivate: [AuthGuard],
+    component: ChangepasswordComponent,
+  },
+  { path: 'product-page', component: ProductPageComponent },
+  { path: 'product-details', component: ProductDetailsComponent },
+  { path: 'payment-page', component: PaymentPageComponent },
+  { path: 'shop', component: ShopComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

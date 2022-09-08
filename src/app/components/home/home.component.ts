@@ -1,3 +1,5 @@
+import { Products } from './../../_models_and_interface/products';
+import { HttpserviceService } from './../../_services/httpservice.service';
 
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/_services/auth.service';
@@ -15,14 +17,18 @@ export class HomeComponent implements OnInit {
   faVideo = faVideo;
   faUsers = faUser;
   faClock = faClock;
+  products: Products[] = [];
+
   constructor(
     private auth: AuthService,
-    public dialog:MatDialog,
+    public dialog: MatDialog,
+    private httpService: HttpserviceService
   ) { }
 
   ngOnInit(): void {
     // console.log(Math.round(new Date().getTime() / 1000))
     this.auth.autoSignIn();
+    // this.getallProduct();
   }
   productDetails() {
     this.dialog.open(ProductPageComponent, {
@@ -30,4 +36,12 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  // getallProduct() {
+  //   this.httpService.getAllProductApi().subscribe({
+  //     next: (res) => {
+  //       this.products = res
+  //       console.log(this.products)
+  //     }
+  //   })
+  // }
 }
