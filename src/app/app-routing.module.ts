@@ -1,3 +1,4 @@
+import { ProductcategoryComponent } from './components/productcategory/productcategory.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { PaymentPageComponent } from './shared/components/payment-page/payment-page.component';
 import { ProductDetailsComponent } from './shared/components/product-details/product-details.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'product-details', component: ProductDetailsComponent },
   { path: 'payment-page', component: PaymentPageComponent },
   { path: 'shop', component: ShopComponent },
+  { path: 'productcategory', component: ProductcategoryComponent },
 ];
 
 @NgModule({

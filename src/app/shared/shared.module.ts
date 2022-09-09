@@ -8,7 +8,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
-import { ProductcategoryComponent } from './components/productcategory/productcategory.component';
 
 const COMPONENTS = [
   ProductDetailsComponent,
@@ -18,7 +17,7 @@ const COMPONENTS = [
 ]
 
 const MODULES = [
-  MatDialog,
+  // MatDialog,
   MatButtonModule,
   FontAwesomeModule,
   MaterialuiModule,
@@ -30,7 +29,7 @@ const MODULES = [
 @NgModule({
   declarations: [
     ...COMPONENTS,
-    ProductcategoryComponent,
+    
   ],
   imports: [
     ...MODULES,

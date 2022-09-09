@@ -4,12 +4,15 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 const nzZorroModules = [
   NzDividerModule,
   NzButtonModule,
   NzModalModule,
   NzPaginationModule,
+  NzCardModule
+  
 ];
 
 @NgModule({

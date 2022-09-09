@@ -28,6 +28,7 @@ import { ChangepasswordComponent } from './components/user-profile/changepasswor
 import { AlertComponent } from './components/dialog/alert/alert.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { NzZorroModule } from './_models_and_interface/nz-zorro.module';
+import { ProductcategoryComponent } from './components/productcategory/productcategory.component';
 
 
 
@@ -47,6 +48,7 @@ import { NzZorroModule } from './_models_and_interface/nz-zorro.module';
     ChangepasswordComponent,
     AlertComponent,
     ShopComponent,
+    ProductcategoryComponent,
  
   ],
   imports: [

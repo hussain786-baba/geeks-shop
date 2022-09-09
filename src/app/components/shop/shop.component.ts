@@ -1,4 +1,5 @@
-import { ProductcategoryComponent } from './../../shared/components/productcategory/productcategory.component';
+import { Router } from '@angular/router';
+import { ProductcategoryComponent } from '../productcategory/productcategory.component';
 import { HttpserviceService } from './../../_services/httpservice.service';
 import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/_models_and_interface/products';
@@ -17,11 +18,13 @@ export class ShopComponent implements OnInit {
 
   constructor(
     private httpService: HttpserviceService,
-    private modal: NzModalService
+    private modal: NzModalService,
+    private route:Router
   ) {}
 
   ngOnInit(): void {
     this.getallProduct(this.pageIndex);
+   
   }
 
   changePage(event: number) {
@@ -29,6 +32,7 @@ export class ShopComponent implements OnInit {
     this.getallProduct(this.pageIndex);
   }
 
+  /*Get All product with pagination */
   getallProduct(pageno: number) {
     this.httpService.getAllProductApi(pageno, 12)
       .subscribe({
@@ -38,22 +42,10 @@ export class ShopComponent implements OnInit {
       });
   }
 
+  /**Category Model Open */
   selectCategory() {
-    const modal: NzModalRef = this.modal.create({
-      nzTitle: 'Modal Title',
-      nzContent: ProductcategoryComponent,
-      nzFooter: [
-        {
-          label: 'Close',
-          shape: 'round',
-          onClick: () => modal.destroy(),
-        },
-        {
-          label: 'Select',
-          shape: 'round',
-          onClick: () => modal.destroy(),
-        },
-      ],
-    });
+  
+    this.route.navigate(['/productcategory'])
   }
+
 }
