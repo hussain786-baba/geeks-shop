@@ -21,4 +21,8 @@ export class  HttpserviceService {
     return this.http.get<any>(API.getProductCategory)
   }
 
+  getSingleProductCategory(id:number) : Observable<any>{
+    return this.http.get<any>(API.getSingleProductCategory + `/${id}/products`)
+  }
+
 }

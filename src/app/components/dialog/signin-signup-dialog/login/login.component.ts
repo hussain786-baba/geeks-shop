@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
       const password = this.login.value.password;
       this._authService.signin(email, password).subscribe(
         res => {
-          this.router.navigate([''])
+          this.router.navigate(['/home'])
          this.dialog.closeAll()
         },
         err => {

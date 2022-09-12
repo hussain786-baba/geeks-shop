@@ -56,7 +56,7 @@ export class SignupComponent implements OnInit {
       return
     } else if (this.signup.valid) {
       this._userDetail.saveUserInfo(this.signup.value).subscribe(res=>{
-        (console.log(res))
+        // (console.log(res))
           })
       // console.log(this.signup.value)
       const email = this.signup.value.email;

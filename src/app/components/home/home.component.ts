@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     // console.log(Math.round(new Date().getTime() / 1000))
     this.auth.autoSignIn();
-    // this.getallProduct();
+    this.getallProduct();
   }
   productDetails() {
     this.dialog.open(ProductPageComponent, {
@@ -36,12 +36,12 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  // getallProduct() {
-  //   this.httpService.getAllProductApi().subscribe({
-  //     next: (res) => {
-  //       this.products = res
-  //       console.log(this.products)
-  //     }
-  //   })
-  // }
+  getallProduct() {
+    this.httpService.getAllProductApi(1,10).subscribe({
+      next: (res) => {
+        this.products = res
+        // console.log(this.products)
+      }
+    })
+  }
 }

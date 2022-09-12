@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { ProductcategoryComponent } from '../productcategory/productcategory.component';
+import { ProductcategoryComponent } from './productcategory/productcategory.component';
 import { HttpserviceService } from './../../_services/httpservice.service';
 import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/_models_and_interface/products';
@@ -44,8 +44,7 @@ export class ShopComponent implements OnInit {
 
   /**Category Model Open */
   selectCategory() {
-  
-    this.route.navigate(['/productcategory'])
+    this.route.navigate(['./shop/productcategory'])
   }
 
 }

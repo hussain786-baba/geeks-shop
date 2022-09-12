@@ -5,13 +5,17 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { NzImageModule } from 'ng-zorro-antd/image';
 
 const nzZorroModules = [
   NzDividerModule,
   NzButtonModule,
   NzModalModule,
   NzPaginationModule,
-  NzCardModule
+  NzCardModule,
+  NzSkeletonModule,
+  NzImageModule
   
 ];
 

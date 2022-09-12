@@ -26,9 +26,8 @@ import { UILoader } from './_models_and_interface/UILoader.module';
 import { BlogModel } from './appModel/blog';
 import { ChangepasswordComponent } from './components/user-profile/changepassword/changepassword.component';
 import { AlertComponent } from './components/dialog/alert/alert.component';
-import { ShopComponent } from './components/shop/shop.component';
 import { NzZorroModule } from './_models_and_interface/nz-zorro.module';
-import { ProductcategoryComponent } from './components/productcategory/productcategory.component';
+import { NotpagefoundComponent } from './components/notpagefound/notpagefound.component';
 
 
 
@@ -36,19 +35,14 @@ import { ProductcategoryComponent } from './components/productcategory/productca
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,
-    BlogComponent,
-    ContactComponent,
     LoginComponent,
     SignupComponent,
     FooterComponent,
-    BlogArticleComponent,
     UserProfileComponent,
     SigninSignupDialogComponent,
     ChangepasswordComponent,
     AlertComponent,
-    ShopComponent,
-    ProductcategoryComponent,
+    NotpagefoundComponent,
  
   ],
   imports: [
@@ -62,7 +56,7 @@ import { ProductcategoryComponent } from './components/productcategory/productca
     MaterialuiModule,
     MatIconModule,
     // SharedModule
-    NzZorroModule
+    NzZorroModule,
    
   ],
   providers: [

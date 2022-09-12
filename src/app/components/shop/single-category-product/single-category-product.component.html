@@ -3,7 +3,7 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder text-white">Shop in Style</h1>
+                    <h1 class="display-4 fw-bolder text-white">{{categoryName}}</h1>
                     <!-- <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p> -->
                 </div>
             </div>
@@ -11,26 +11,33 @@
         <!-- Section-->
         <nz-divider nzDashed [nzText]="text">
             <ng-template #text>
-            <button nz-button nzType="primary" (click)="selectCategory()">Select Category</button>
+            <button nz-button nzType="primary" (click)="goBack()">Return to Catetories</button>
             </ng-template>
           </nz-divider>
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-start">
-                    <ng-container *ngFor="let product of products">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-start"  
+                infiniteScroll
+                [infiniteScrollDistance]="2"
+                [infiniteScrollThrottle]="50"
+                [infiniteScrollDisabled]="isFullListDisplayed"
+                (scrolled)="onScroll($event)"
+                >
+                    <ng-container *ngFor="let product of itemsToShow">
+                        <nz-skeleton [nzLoading]="loading" [nzActive]="true" [nzParagraph]="true" [nzTitle]="true">
                         <div class="col mb-5">
                             <div class="card h-100 align-items-center" >
                                 <!-- Product image-->
-                                <div class="product-img mt-4 d-flex justify-content-center">
-                                    <img class=" w-100" [src]="product.images[0] && product.images[0] != null ? product.images[0] : '/assets/images/mountain.avif'" alt="..." />
-                                </div>
+                                    <div class="product-img mt-4 d-flex justify-content-center" >
+                                        <img nz-image class="w-100" [nzSrc]="product.images[0]" [nzFallback]="fallbackImage" alt="..." />
+                                    </div>
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                         <!-- Product name-->
                                         <p class="product-title">{{product.title && product.title != null ? product.title : 'No Title' | slice:0:10}}</p>
                                         <!-- Product price-->
                                        <p class="price fw-bolder"> ${{product.price && product.price != null ? product.price : 'No Price'}}</p>
-                                       <p class="price ">{{product.description && product.description != null ? product.description : ''}}</p>
+                                       <p class="description ">{{product.description && product.description != null ? product.description : ''}}</p>
                                 </div>
                                 <!-- Product actions-->
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent w-100">
@@ -38,9 +45,10 @@
                                 </div>
                             </div>
                         </div>
+                    </nz-skeleton>
                     </ng-container>
                 </div>
-                <nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="50" (nzPageIndexChange)="changePage($event)" class="text-center"></nz-pagination>
+                <!-- <nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="50" (nzPageIndexChange)="changePage($event)" class="text-center"></nz-pagination> -->
             </div>
         </section>
  

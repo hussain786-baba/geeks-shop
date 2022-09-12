@@ -35,7 +35,7 @@ export class ChangepasswordComponent implements OnInit {
       return
     }
     else if (this.changePassword.valid) {
-      console.log(this.changePassword.value)
+      // console.log(this.changePassword.value)
 
 
       this.openDialog();

@@ -4,7 +4,7 @@
     <h2>Select Category</h2>
     </ng-template>
   </nz-divider>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <ng-container *ngFor="let category of categories">
         <div class="col-4 my-3">
@@ -13,7 +13,7 @@
                 <div class="card-body">
                   <h3 class="card-title bold">{{category.name}}</h3>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <button nz-button nzType="primary" (click)="viewProductsFromCategories(category.id, category.name)">View Products</button>
                 </div>
               </div>
           </div>

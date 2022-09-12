@@ -1,0 +1,15 @@
+::ng-deep{
+    .ant-skeleton-element{
+        width: 100% !important;
+        span{
+            width: 100% !important;
+        }
+    }
+    .ant-skeleton{
+        // height: 384px !important;
+    }
+}
+.description{
+    height: 100px;
+    overflow: hidden;
+}
