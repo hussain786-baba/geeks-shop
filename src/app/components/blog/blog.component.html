@@ -25,8 +25,9 @@
         <div class="col pb-3"  *ngFor="let article of blogArray">
           <article class="card border-0 shadow-sm h-100">
             <div class="position-relative">
-              <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-              <a [routerLink]="['/blog-article', article['id']]"
+              <!-- [routerLink]="['/blog/blog-article', article['id']]" -->
+              <a (click)="goToArticle(article.id, article.title)" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+              <a (click)="goToArticle(article.id, article.title)"
                 class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3"
                 data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later">
               </a>
@@ -34,15 +35,15 @@
             </div>
             <div class="card-body pb-4">
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">{{article['tutorial']}}</a>
+                <a (click)="goToArticle(article.id, article.title)" class="badge fs-sm text-nav text-decoration-none">{{article['tutorial']}}</a>
                 <span class="fs-sm text-muted"> {{article['date']}} </span>
               </div>
               <h3 class="h5 mb-0">
-                <a [routerLink]="['/blog-article', article['id']]"> {{article['title']}}</a>
+                <a (click)="goToArticle(article.id, article.title)"> {{article['title']}}</a>
               </h3>
             </div>
             <div class="card-footer py-4">
-              <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+              <a (click)="goToArticle(article.id, article.title)" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                 <img src="{{ article['profileImgURL'] }}" class="rounded-circle me-3"
                   width="50" height="50" alt="Avatar">
                 {{article['author']}}
@@ -55,22 +56,22 @@
       <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
+                  <a (click)="goToArticle(article.id, article.title)" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a (click)="goToArticle(article.id, article.title)" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
+                    <a (click)="goToArticle(article.id, article.title)" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
                     <span class="fs-sm text-muted">12 hours ago</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a [routerLink]="['/blog-article', article['id']]">Five Effective Lead Generation Techniques For Your Business</a>
+                    <a (click)="goToArticle(article.id, article.title)">Five Effective Lead Generation Techniques For Your Business</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a (click)="goToArticle(article.id, article.title)" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Esther Howard
                   </a>
@@ -82,22 +83,22 @@
       <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
+                  <a (click)="goToArticle(article.id, article.title)" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a (click)="goToArticle(article.id, article.title)" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Digital</a>
+                    <a (click)="goToArticle(article.id, article.title)" class="badge fs-sm text-nav text-decoration-none">Digital</a>
                     <span class="fs-sm text-muted">Oct 9, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a [routerLink]="['/blog-article', article['id']]">Inclusive Marketing: Why and How Does it Work?</a>
+                    <a (click)="goToArticle(article.id, article.title)">Inclusive Marketing: Why and How Does it Work?</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a (click)="goToArticle(article.id, article.title)" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Jane Cooper
                   </a>
@@ -109,22 +110,22 @@
       <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
+                  <a (click)="goToArticle(article.id, article.title)" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a (click)="goToArticle(article.id, article.title)" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Marketing</a>
+                    <a (click)="goToArticle(article.id, article.title)" class="badge fs-sm text-nav text-decoration-none">Marketing</a>
                     <span class="fs-sm text-muted">Apr 2, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a [routerLink]="['/blog-article', article['id']]">How Agile is Your Forecasting Process?</a>
+                    <a (click)="goToArticle(article.id, article.title)">How Agile is Your Forecasting Process?</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a (click)="goToArticle(article.id, article.title)" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Albert Flores
                   </a>
@@ -136,22 +137,22 @@
       <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
+                  <a (click)="goToArticle(article.id, article.title)" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a (click)="goToArticle(article.id, article.title)" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
+                    <a (click)="goToArticle(article.id, article.title)" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
                     <span class="fs-sm text-muted">Sep 3, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a [routerLink]="['/blog-article', article['id']]">Your Guide to Optimising A JavaScript-enabled Website</a>
+                    <a (click)="goToArticle(article.id, article.title)">Your Guide to Optimising A JavaScript-enabled Website</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a (click)="goToArticle(article.id, article.title)" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Ralph Edwards
                   </a>
@@ -163,22 +164,22 @@
       <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
+                  <a (click)="goToArticle(article.id, article.title)" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a (click)="goToArticle(article.id, article.title)" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
+                    <a (click)="goToArticle(article.id, article.title)" class="badge fs-sm text-nav text-decoration-none">Processes &amp; Tools</a>
                     <span class="fs-sm text-muted">Sep 10, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a [routerLink]="['/blog-article', article['id']]">A Study on Smartwatch Design Qualities and People’s Preferences</a>
+                    <a (click)="goToArticle(article.id, article.title)">A Study on Smartwatch Design Qualities and People’s Preferences</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a (click)="goToArticle(article.id, article.title)" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Esther Howard
                   </a>
@@ -190,22 +191,22 @@
       <!-- <div class="col pb-3">
               <article class="card border-0 shadow-sm h-100">
                 <div class="position-relative">
-                  <a [routerLink]="['/blog-article', article['id']]" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-                  <a [routerLink]="['/blog-article', article['id']]" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
+                  <a (click)="goToArticle(article.id, article.title)" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                  <a (click)="goToArticle(article.id, article.title)" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Read later"
                   </a>
                   <img src="../../../assets/images/photo-1508976594853-a50fce4ad397.avif" class="card-img-top" alt="Image">
                 </div>
                 <div class="card-body pb-4">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a [routerLink]="['/blog-article', article['id']]" class="badge fs-sm text-nav text-decoration-none">Strategy</a>
+                    <a (click)="goToArticle(article.id, article.title)" class="badge fs-sm text-nav text-decoration-none">Strategy</a>
                     <span class="fs-sm text-muted">Sep 16, 2021</span>
                   </div>
                   <h3 class="h5 mb-0">
-                    <a [routerLink]="['/blog-article', article['id']]">This Long-Awaited Technology May Finally Change the World</a>
+                    <a (click)="goToArticle(article.id, article.title)">This Long-Awaited Technology May Finally Change the World</a>
                   </h3>
                 </div>
                 <div class="card-footer py-4">
-                  <a [routerLink]="['/blog-article', article['id']]" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
+                  <a (click)="goToArticle(article.id, article.title)" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
                     <img src="../../../assets/images/hero-img.c1489dfacfd7fadae59a.png" class="rounded-circle me-3" width="48" alt="Avatar">
                     Ralph Edwards
                   </a>

@@ -207,3 +207,8 @@ color: var(--primary-color);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.ant-btn-primary{
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+}
