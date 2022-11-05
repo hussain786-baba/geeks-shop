@@ -1,36 +1,37 @@
-<div class="d-flex align-items-center">
+<div class="d-flex align-items-center ">
     <!-- Buttons  -->
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" *ngIf="!signedIn">
         <button mat-stroked-button color="warn" (click)="signinDialog()">Log In</button>
         <button mat-raised-button color="warn" (click)="signupDialog()">Sign Up</button>
       </div>
     <!-- Avatar -->
-    <div class="dropdown me-2 p-2" *ngIf="signedIn" >
+    <div class="dropdown me-2 p-2 border text-white      rounded-circle text-center" *ngIf="signedIn" style="width:40px; height:40px; background-color: #f06543;" >
         <div class="dropdown">
             <!-- <fa-icon [icon]="profile"></fa-icon> -->
             <div class="profile_img">
-                <img src="../../assets/logo/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="profile">
+                <!-- <img src="../../assets/logo/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="profile"> -->
+                <span class="">{{userEmail | slice:0:1 | titlecase}}</span>
             </div>
 
             <div id="myDropdown" class="dropdown-content" >
-                <div class="ms-3 lh-1 profile_info">
-                    <h5 class="mb-1">Annette Black</h5>
-                    <p class="mb-0 text-muted">annette@geeksui.com</p>
+                <div class="px-3 py-8 lh-1 profile_info">
+                    <h5 class="mb-1 text-white  ">USER</h5>
+                    <p class="mb-0 text-muted">{{userEmail}}</p>
                     <hr>
                 </div>
                 <div class="dropdown-profile">
-                    <a class="w-100 " routerLink="user-profile" style="cursor: pointer;">
+                    <a class="w-100 text-start" routerLink="user-profile" style="cursor: pointer;">
                         <fa-icon [icon]="profileFont" class="fa_icon me-2"></fa-icon>Profile
                     </a>
                 </div>
                 <div class="dropdown-setting">
-                    <a class="w-100 " style="cursor: pointer;" routerLink="changepassword">
+                    <a class="w-100 text-start" style="cursor: pointer;" routerLink="changepassword">
                         <fa-icon [icon]="faGearFont" class="fa_icon me-2"></fa-icon>Setting
                     </a>
                 </div>
                 <div class="dropdown-signout">
                     <hr style="color: white;">
-                    <a class="w-100 "style="cursor: pointer;" (click)="onSignOut()">
+                    <a class="w-100 text-start"style="cursor: pointer;" (click)="onSignOut()">
                         <fa-icon [icon]="signoutFont" class="fa_icon me-2" ></fa-icon>Sign Out
                     </a>
                 </div>

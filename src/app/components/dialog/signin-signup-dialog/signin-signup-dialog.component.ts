@@ -16,11 +16,14 @@ export class SigninSignupDialogComponent implements OnInit {
   signedIn:boolean = false
   // signedOut:boolean = true
   // fontawesome 
+  userDetail : any;
   profileFont = faUser;
   signinFont = faSignIn
   signupFont = faRegistered
   signoutFont = faSignOut
   faGearFont = faGear;
+  userEmail!:string;
+
 
 
   constructor(
@@ -33,6 +36,10 @@ export class SigninSignupDialogComponent implements OnInit {
     this._authService.user.subscribe(res => {
       if (res) {
         this.signedIn = true;
+        this.userDetail = JSON.parse(localStorage.getItem('UserData')!)
+        this.userEmail = this.userDetail.email;
+
+        
       } else {
         this.signedIn = false;
       }

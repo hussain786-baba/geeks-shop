@@ -36,7 +36,16 @@
                                         <!-- Product name-->
                                         <p class="product-title "><strong>{{product.title && product.title != null ? product.title : 'No Title' | slice:0:10}}</strong> </p>
                                         <!-- Product price-->
-                                       <p class="price fw-bolder"> ${{product.price && product.price != null ? product.price : 'No Price'}}</p>
+                                       <!-- <p class="price fw-bolder"> ${{product.price && product.price != null ? product.price : 'No Price'}}</p> -->
+                                       <div class="div">
+                                        <!-- <p class="price fw-bolder"> ${{product.price && product.price != null ? product.price : 'No Price'}}</p> -->
+                                        <p class="fw-700 fs-32 lh-24 mt-3">
+                                            {{ product.price }}
+                                            <span class="text-decoration-line-through fs-16">{{
+                                              product.price + 124
+                                            }}</span>
+                                          </p>
+                                    </div>
                                        <p class="description ">{{product.description && product.description != null ? product.description : ''}}</p>
                                 </div>
                                 <!-- Product actions-->
