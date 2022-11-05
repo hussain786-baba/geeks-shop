@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ProductcategoryComponent } from './productcategory/productcategory.component';
+import { MaterialuiModule } from 'src/app/_models_and_interface/materialui.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ProductcategoryComponent } from './productcategory/productcategory.comp
     ShopRoutingModule,
     NzZorroModule,
     InfiniteScrollModule,
+    MaterialuiModule
   ],
 })
 export class ShopModule {}

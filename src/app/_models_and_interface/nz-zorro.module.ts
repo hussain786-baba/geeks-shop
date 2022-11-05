@@ -7,6 +7,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 const nzZorroModules = [
   NzDividerModule,
@@ -15,7 +16,8 @@ const nzZorroModules = [
   NzPaginationModule,
   NzCardModule,
   NzSkeletonModule,
-  NzImageModule
+  NzImageModule,
+  NzIconModule
   
 ];
 

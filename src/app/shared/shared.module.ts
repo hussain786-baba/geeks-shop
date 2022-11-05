@@ -8,22 +8,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { NzZorroModule } from '../_models_and_interface/nz-zorro.module';
 
 const COMPONENTS = [
   ProductDetailsComponent,
   ProductPageComponent,
-  PaymentPageComponent,
-
-]
-
-const MODULES = [
-  // MatDialog,
-  MatButtonModule,
-  FontAwesomeModule,
-  MaterialuiModule,
-
-  FormsModule
-
 ]
 
 @NgModule({
@@ -32,11 +21,14 @@ const MODULES = [
     
   ],
   imports: [
-    ...MODULES,
-    MatIconModule,
+    // MatIconModule,
+    // MatButtonModule,
+    FontAwesomeModule,
+    MaterialuiModule,
+    FormsModule,
+    NzZorroModule
   ],
   exports: [
-    ...MODULES,
     ...COMPONENTS,
   ]
 })

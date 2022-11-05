@@ -8,19 +8,21 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductPageComponent } from './shared/components/product-page/product-page.component';
-const routes: Routes = [
-  // { path: '', component: HomeComponent },
 
+const routes: Routes = [
+  //Default route on load of website
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+
+  //Lazy loaded all the main components
   { path: 'home', loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule) },
   { path: 'blog', loadChildren: () => import('./components/blog/blog.module').then(m => m.BlogModule) },
   { path: 'contact', loadChildren: () => import('./components/contact/contact.module').then(m => m.ContactModule) },
   { path: 'shop', loadChildren: () => import('./components/shop/shop.module').then(m => m.ShopModule) },
+  
   { path: 'signin-signup-dialog', component: SigninSignupDialogComponent },
   { path: 'user-profile',canActivate: [AuthGuard],component: UserProfileComponent,},
   {path: 'changepassword',canActivate: [AuthGuard],component: ChangepasswordComponent,},
-  { path: 'product-page', component: ProductPageComponent },
-  { path: 'product-details', component: ProductDetailsComponent },
-  { path: 'payment-page', component: PaymentPageComponent },
+  {path: 'payment-page',component:   PaymentPageComponent,},
 
   //Wild Card Route for 404 request
   { path: '**', pathMatch: 'full', component: NotpagefoundComponent },

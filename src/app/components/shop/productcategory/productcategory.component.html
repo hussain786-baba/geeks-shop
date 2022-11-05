@@ -1,14 +1,14 @@
 <div class="category">
   <nz-divider nzDashed [nzText]="text">
     <ng-template #text>
-    <h2>Select Category</h2>
+      <h2>Select Category</h2>
     </ng-template>
   </nz-divider>
   <div class="container">
     <div class="row">
-      <ng-container *ngFor="let category of categories">
+      <!-- <ng-container *ngFor="let category of categories">
         <div class="col-4 my-3">
-            <div class="card" style="width:100%;">
+            <div class="card">
                 <img [src]="category.image" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h3 class="card-title bold">{{category.name}}</h3>
@@ -17,10 +17,39 @@
                 </div>
               </div>
           </div>
-      </ng-container>
+      </ng-container> -->
+      <div class="col-3" *ngFor="let category of categories">
+        <mat-card class="example-card mb-4">
+          <div class="card-img">
+            <img [src]="category.image" alt="Photo of a Shiba Inu" />
+          </div>
+          <mat-card-header>
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <mat-card-title>{{ category.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct
+              spitz breeds of dog from Japan. A small, agile dog that copes very
+              well with mountainous terrain, the Shiba Inu was originally bred
+              for hunting.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button
+            class="d-flex align-items-center"
+              nz-button
+              nzType="primary"
+              nzSize="default"
+              nzShape="round"
+              (click)="viewProductsFromCategories(category.id, category.name)"
+            >
+            <span nz-icon nzType="eye" nzTheme="outline"></span>
+              View Products
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
-    
-  
- 
-</div>
+  </div>
 </div>

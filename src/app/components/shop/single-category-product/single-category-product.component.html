@@ -28,20 +28,20 @@
                         <div class="col mb-5">
                             <div class="card h-100 align-items-center" >
                                 <!-- Product image-->
-                                    <div class="product-img mt-4 d-flex justify-content-center" >
+                                    <div class="product-img d-flex justify-content-center" >
                                         <img nz-image class="w-100" [nzSrc]="product.images[0]" [nzFallback]="fallbackImage" alt="..." />
                                     </div>
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                         <!-- Product name-->
-                                        <p class="product-title">{{product.title && product.title != null ? product.title : 'No Title' | slice:0:10}}</p>
+                                        <p class="product-title "><strong>{{product.title && product.title != null ? product.title : 'No Title' | slice:0:10}}</strong> </p>
                                         <!-- Product price-->
                                        <p class="price fw-bolder"> ${{product.price && product.price != null ? product.price : 'No Price'}}</p>
                                        <p class="description ">{{product.description && product.description != null ? product.description : ''}}</p>
                                 </div>
                                 <!-- Product actions-->
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent w-100">
-                                    <div class="text-left"><a class="btn btn-outline-dark mt-auto">Buy Now</a></div>
+                                    <div class="text-left"><a class="btn btn-outline-dark mt-auto" (click)="openProducDetails(product)">Buy Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -50,5 +50,7 @@
                 </div>
                 <!-- <nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="50" (nzPageIndexChange)="changePage($event)" class="text-center"></nz-pagination> -->
             </div>
+         
         </section>
+
  

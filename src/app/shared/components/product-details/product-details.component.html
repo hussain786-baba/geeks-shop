@@ -1,33 +1,63 @@
-<div class="container">
-    <div class="book-list row">
-        <div class="col-sm-4 col-12">
-            <div class="product-img text-center p-sm-3">
-                <img src="../../../assets/images/books/laravel.jpg" alt="">
-            </div>
-        </div>
-        <div class="col-sm-8 col-12 mt-sm-0 mt-3">
-            <div class="product-desc p-sm-4">
-                <div class="row justify-content-between">
-                    <p class="col-sm-6 col-12 heading fw-700 lh-32 fs-32">Laravel 5</p>
-                    <p class="col-sm-6 col-12 author fw-600 fs-16 lh-24 text-end">Author |&nbsp;<span class="fw-700">John Doe</span> </p>
-                </div>
-                <p class="paperback fw-600">Paperback | English</p>
-                <p class="published fw-600">Published | 20 Aug 2022</p>
-                <p class="fw-400 fs-16 lh-32">Build a fully-fledged, feature-rich application from scratch using
-                    Laravel. You'll learn by doing, not simply studying. At the end of each step, not only will you
-                    have learned a new skill, trick or technique - but you'll have built another feature of your
-                    first hand-crafted Laravel application. You'll go beyond the Laravel framework itself as we take
-                    a look at some of the skills any professional developer needs, to take your career - or indeed
-                    hobby - to the next level.
-                </p>
-                <p class="fw-700 fs-32 lh-24 mt-3">$100 <span class="text-decoration-line-through fs-16">$120</span>
-                </p>
-                <div class="shop-btn mt-4">
-                    <button mat-stroked-button color="warn" class="me-4">Add to Cart</button>
-                    <button mat-flat-button color="warn" class="" (click)="payment()" >Buy Now</button>
-                </div>
-
-            </div>
-        </div>
+<div class="container d-flex align-items-center h-100">
+  <!-- <div class="spinner w-100 d-flex justify-content-center align-items-center"> 
+    <mat-spinner></mat-spinner>
+  </div> -->
+  <div class="book-list row">
+    <div class="col-sm-4 col-12">
+      <div class="product-img text-center p-sm-3">
+        <img
+          src="{{ singleProductData.images[0] }}"
+          alt=""
+          class="w-100"
+          style="height: 391px"
+        />
+      </div>
     </div>
+    <div class="col-sm-8 col-12 mt-sm-0 mt-3 position-relative">
+      <div class="product-desc p-sm-4">
+        <div class="row justify-content-between">
+          <p class="col-sm-6 col-12 heading fw-700 lh-32 fs-32">
+            {{ singleProductData.title }}
+          </p>
+          <!-- <p class="col-sm-6 col-12 author fw-600 fs-16 lh-24 text-end">Author |&nbsp;<span class="fw-700">John Doe</span> </p> -->
+        </div>
+        <!-- <p class="paperback fw-600">Paperback | English</p> -->
+        <!-- <p class="published fw-600">Published | 20 Aug 2022</p> -->
+        <p class="fw-400 fs-16 lh-32">{{ singleProductData.description }}</p>
+      </div>
+      <div class="p-sm-3 position-absolute bottom-0 w-100">
+        <p class="fw-700 fs-32 lh-24 mt-3">
+          {{ singleProductData.price }}
+          <span class="text-decoration-line-through fs-16">{{
+            singleProductData.price + 124
+          }}</span>
+        </p>
+        <div class="shop-btn mt-4 d-flex gap-2">
+          <!-- <button mat-stroked-button color="warn" class="me-4">Add to Cart</button>
+                        <button mat-flat-button color="warn" class="" (click)="payment()" >Buy Now</button> -->
+          <button
+            class="d-flex align-items-center px-4 py-3"
+            nz-button
+            nzType="primary"
+            nzSize="default"
+            nzShape="round"
+          >
+            <span nz-icon nzType="shopping-cart" nzTheme="outline"></span>
+            Add to Cart
+          </button>
+          <button
+            class="d-flex align-items-center px-4 py-3"
+            nz-button
+            nzType="primary"
+            nzSize="default"
+            nzShape="round"
+            (click)="payment()"
+          >
+            <span nz-icon nzType="alipay" nzTheme="outline"></span>
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
