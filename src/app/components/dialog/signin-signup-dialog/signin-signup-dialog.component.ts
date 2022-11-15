@@ -1,7 +1,12 @@
-
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { faUser, faSignIn, faRegistered, faSignOut, faGear } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUser,
+  faSignIn,
+  faRegistered,
+  faSignOut,
+  faGear,
+} from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/_services/auth.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -9,47 +14,35 @@ import { SignupComponent } from './signup/signup.component';
 @Component({
   selector: 'app-signin-signup-dialog',
   templateUrl: './signin-signup-dialog.component.html',
-  styleUrls: ['./signin-signup-dialog.component.scss']
+  styleUrls: ['./signin-signup-dialog.component.scss'],
 })
 export class SigninSignupDialogComponent implements OnInit {
-
-  signedIn:boolean = false
-  // signedOut:boolean = true
-  // fontawesome 
-  userDetail : any;
+  signedIn: boolean = false;
+  // fontawesome
+  userDetail: any;
   profileFont = faUser;
-  signinFont = faSignIn
-  signupFont = faRegistered
-  signoutFont = faSignOut
+  signinFont = faSignIn;
+  signupFont = faRegistered;
+  signoutFont = faSignOut;
   faGearFont = faGear;
-  userEmail!:string;
-
-
-
-  constructor(
-    public dialog: MatDialog,
-    private _authService : AuthService,
-  ) { 
-  }
-
+  userEmail!: string;
+  constructor(public dialog: MatDialog, private _authService: AuthService) {}
   ngOnInit(): void {
-    this._authService.user.subscribe(res => {
+    this._authService.user.subscribe((res) => {
       if (res) {
         this.signedIn = true;
-        this.userDetail = JSON.parse(localStorage.getItem('UserData')!)
+        this.userDetail = JSON.parse(localStorage.getItem('UserData')!);
         this.userEmail = this.userDetail.email;
-
-        
       } else {
         this.signedIn = false;
       }
-    })
+    });
   }
   signinDialog() {
-    this.dialog.open(LoginComponent,{ panelClass: 'login'})
+    this.dialog.open(LoginComponent, { panelClass: 'login' });
   }
   signupDialog() {
-    this.dialog.open(SignupComponent,{ panelClass: 'app-full-bleed-dialog', })
+    this.dialog.open(SignupComponent, { panelClass: 'app-full-bleed-dialog' });
   }
   onSignOut() {
     this._authService.signOut();
