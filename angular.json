@@ -20,7 +20,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/angular-assignment",
+                        "outputPath": "public",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -75,10 +75,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "angular-assignment:build:production"
+                            "browserTarget": "geek-shop:build:production"
                         },
                         "development": {
-                            "browserTarget": "angular-assignment:build:development"
+                            "browserTarget": "geek-shop:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "angular-assignment:build"
+                        "browserTarget": "geeks-shop:build"
                     }
                 },
                 "test": {
@@ -110,5 +110,5 @@
             }
         }
     },
-    "defaultProject": "angular-assignment"
+    "defaultProject": "geek-shop"
 }

@@ -11,8 +11,8 @@ import { User } from '../_models_and_interface/user.model';
   providedIn: 'root'
 })
 export class AuthService {
-  API_KEY = 'AIzaSyDUMlJxk1lrEEdnQTIwroGSKtrMP_pGZGM'
-  USER_DB = 'https://angular-assignment-2-f3ef2-default-rtdb.firebaseio.com/users.json';
+  API_KEY = 'AIzaSyA2Idy9GeZFEeyZoGe3QKvgd9sVb_QoR3o'
+  USER_DB = 'https://geeks-shop-default-rtdb.firebaseio.com';
   user = new BehaviorSubject<User>(null!);
 
   constructor(
