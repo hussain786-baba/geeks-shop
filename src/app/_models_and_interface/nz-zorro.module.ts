@@ -11,6 +11,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 const nzZorroModules = [
   NzDividerModule,
@@ -23,7 +24,8 @@ const nzZorroModules = [
   NzIconModule,
   NzMenuModule,
   NzToolTipModule,
-  NzLayoutModule
+  NzLayoutModule,
+  NzNotificationModule
 ];
 
 @NgModule({

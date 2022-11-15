@@ -1,10 +1,7 @@
 import { AuthService } from 'src/app/_services/auth.service';
-import { UserProfile } from './../_models_and_interface/userprofile.model';
 import { User } from '../_models_and_interface/user.model';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { url } from 'inspector';
-import { exhaustMap, take, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

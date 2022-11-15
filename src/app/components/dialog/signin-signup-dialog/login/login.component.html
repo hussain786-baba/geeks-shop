@@ -1,14 +1,5 @@
-<!-- <section class=" gradient-form" style="background-color: #eee">
-    <div class="container py-5 h-100"> -->
-       
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-xl-12">
-                 <!-- Alert  -->
-                 <div class="alert alert-danger d-flex align-items-center shadow justify-content-center" role="alert" *ngIf="error">
-                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                    <div> <strong>Error Code {{errorCode}} occured :</strong> {{errorMsg}}</div>
-                  </div>
-                  <!-- Alert  -->
                 <div class="card rounded-3 text-black">
                     <div class="row g-0">
                         <div class="col-lg-6">
@@ -56,7 +47,6 @@
                         </div>
                         <div class="col-lg-6 d-flex align-items-center about">
                             <div mat-dialog-actions class="closeBtn">
-                                <!-- <button mat-button mat-dialog-close style="border: none; background-color: white;"><fa-icon [icon]="faClose" class="fa_icon"></fa-icon></button> -->
                                 <button mat-icon-button (click)="dialogClose()" color="primary" aria-label="Example icon button with a home icon">
                                     <fa-icon [icon]="faClose" class="fa_icon"></fa-icon>
                                   </button>
@@ -70,6 +60,3 @@
                 </div>
             </div>
         </div>
-        
-    <!-- </div>
-</section> -->

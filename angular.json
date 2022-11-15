@@ -78,7 +78,7 @@
                             "browserTarget": "geek-shop:build:production"
                         },
                         "development": {
-                            "browserTarget": "geek-shop:build:development"
+                            "browserTarget": "angular-assignment:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
