@@ -26,8 +26,7 @@ export class SigninSignupDialogComponent implements OnInit {
   signoutFont = faSignOut;
   faGearFont = faGear;
   userEmail!: string;
-  constructor(public dialog: MatDialog, private _authService: AuthService) {}
-  ngOnInit(): void {
+  constructor(public dialog: MatDialog, private _authService: AuthService) {
     this._authService.user.subscribe((res) => {
       if (res) {
         this.signedIn = true;
@@ -37,6 +36,9 @@ export class SigninSignupDialogComponent implements OnInit {
         this.signedIn = false;
       }
     });
+  }
+  ngOnInit(): void {
+  
   }
   signinDialog() {
     this.dialog.open(LoginComponent, { panelClass: 'login' });

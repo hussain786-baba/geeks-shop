@@ -1,54 +1,77 @@
-    <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-        <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Navbar brand -->
-            <div class="logo d-flex">
-                <a class="navbar-brand mt-2 mt-lg-0 d-flex align-items-center">
-                    <img src="../../assets/logo/logo2.png" height="45" alt="MDB Logo" />
-                    <span class="text-dark logo-text">Geeks</span>
-                </a>
-            </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="logo d-flex">
+        <a class="navbar-brand mt-2 mt-lg-0 d-flex align-items-center">
+          <img src="../../assets/logo/logo2.png" height="45" alt="MDB Logo" />
+          <span class="text-dark logo-text">Geeks</span>
+        </a>
+      </div>
 
-            <!-- Left links -->
-            <ul class="navbar-nav m-auto mb-2">
-                <li class="nav-item">
-                    <a class="nav-link nav-link-fade-up" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-fade-up" routerLinkActive="active" routerLink="blog">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-fade-up" routerLinkActive="active" routerLink="shop">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-fade-up" routerLinkActive="active" routerLink="contact">Contact</a>
-                </li>
-                <li class="nav-item" *ngIf="signedIn">
-                    <a class="nav-link nav-link-fade-up" routerLinkActive="active" routerLink="admin-dashboard">Admin Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-fade-up" routerLinkActive="active" routerLink="#">About US</a>
-                </li>
-                
-            </ul>
-            <!-- Left links -->
-        </div>
-        <!-- Collapsible wrapper -->
-
-        <!-- Right elements -->
-    <app-signin-signup-dialog></app-signin-signup-dialog>
-        <!-- Right elements -->
+      <ul class="navbar-nav m-auto mb-2">
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-fade-up"
+            routerLink="home"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-fade-up"
+            routerLinkActive="active"
+            routerLink="blog"
+            >Blog</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-fade-up"
+            routerLinkActive="active"
+            routerLink="shop"
+            >Shop</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-fade-up"
+            routerLinkActive="active"
+            routerLink="contact"
+            >Contact</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="signedIn">
+          <a
+            class="nav-link nav-link-fade-up"
+            routerLinkActive="active"
+            routerLink="admin-dashboard"
+            >Admin Dashboard</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-fade-up"
+            routerLinkActive="active"
+            routerLink="#"
+            >About US</a
+          >
+        </li>
+      </ul>
     </div>
-    <!-- Container wrapper -->
+    <app-signin-signup-dialog></app-signin-signup-dialog>
+  </div>
 </nav>
-<!-- Navbar -->
