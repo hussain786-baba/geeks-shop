@@ -8,6 +8,9 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 const nzZorroModules = [
   NzDividerModule,
@@ -17,8 +20,10 @@ const nzZorroModules = [
   NzCardModule,
   NzSkeletonModule,
   NzImageModule,
-  NzIconModule
-  
+  NzIconModule,
+  NzMenuModule,
+  NzToolTipModule,
+  NzLayoutModule
 ];
 
 @NgModule({

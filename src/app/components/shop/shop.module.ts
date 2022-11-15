@@ -7,8 +7,13 @@ import { CommonModule } from '@angular/common';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ProductcategoryComponent } from './productcategory/productcategory.component';
 import { MaterialuiModule } from 'src/app/_models_and_interface/materialui.module';
+import { RouterModule } from '@angular/router';
 
-
+const routes = [
+  {path: '', component:ShopComponent},
+  {path: 'single-category-product', component:SingleCategoryProductComponent},
+  {path: 'productcategory', component:ProductcategoryComponent},
+]
 @NgModule({
   declarations: [
     ShopComponent,
@@ -20,7 +25,8 @@ import { MaterialuiModule } from 'src/app/_models_and_interface/materialui.modul
     ShopRoutingModule,
     NzZorroModule,
     InfiniteScrollModule,
-    MaterialuiModule
+    MaterialuiModule,
+    RouterModule.forChild(routes)
   ],
 })
 export class ShopModule {}
