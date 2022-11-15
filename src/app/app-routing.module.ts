@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'blog', loadChildren: () => import('./components/blog/blog.module').then(m => m.BlogModule) },
   { path: 'contact', loadChildren: () => import('./components/contact/contact.module').then(m => m.ContactModule) },
   { path: 'shop', loadChildren: () => import('./components/shop/shop.module').then(m => m.ShopModule) },
+  { path: 'admin-dashboard', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   
   { path: 'signin-signup-dialog', component: SigninSignupDialogComponent },
   { path: 'user-profile',canActivate: [AuthGuard],component: UserProfileComponent,},

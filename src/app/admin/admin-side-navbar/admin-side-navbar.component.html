@@ -1,0 +1,28 @@
+<nz-layout class="vh-100">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li
+        nz-menu-item
+        nzIcon="dashboard"
+        [nzMatchRouter]="true"
+        [routerLink]="['/admin-dashboard/dashboard']"
+      >
+        <span nz-icon nzType="dashboard"></span> <span>Dashboard</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <span
+        class="trigger"
+        nz-icon
+        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"
+      ></span>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
