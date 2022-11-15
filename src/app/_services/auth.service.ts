@@ -1,8 +1,9 @@
 import { AuthResponse } from '../_models_and_interface/auth-response.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Subject, tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { User } from '../_models_and_interface/user.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class AuthService {
   USER_DB = 'https://geeks-shop-default-rtdb.firebaseio.com';
   user = new BehaviorSubject<User>(null!);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private route:Router) {}
 
   signup(email: any, password: any) {
     return this.http
@@ -62,6 +63,7 @@ export class AuthService {
   signOut() {
     this.user.next(null!);
     localStorage.removeItem('UserData');
+    this.route.navigateByUrl('/home')
   }
   autoSignIn() {
     const userData: any = JSON.parse(localStorage.getItem('UserData')!);
@@ -90,9 +92,6 @@ export class AuthService {
     const user = new User(email, userId, token, expirationDate);
     this.user.next(user);
     localStorage.setItem('UserData', JSON.stringify(user));
-  }
-  print() {
-    console.log('Hello');
   }
 
   changePassword(data: any) {
