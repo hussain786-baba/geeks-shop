@@ -5,6 +5,7 @@ import { AdminSideNavbarComponent } from './admin-side-navbar/admin-side-navbar.
 import { NzZorroModule } from '../_models_and_interface/nz-zorro.module';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { AuthGuard } from '../guard/auth.guard';
 
 const routes = [
   {
