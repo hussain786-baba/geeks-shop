@@ -1,7 +1,8 @@
 <nz-layout class="">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-    <div class="logo text-center">
-      <img src="./assets/logo/favicon-geekshop.png" class="logo-src" alt="" />
+    <div class="logo d-flex justify-content-center align-items-center rounded shadow">
+      <!-- <img src="./assets/logo/favicon-geekshop.png" class="logo-src" alt="" /> -->
+      <span class="text-white fw-400">Dashboard Insights</span>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
       <li
@@ -10,7 +11,7 @@
         [nzMatchRouter]="true"
         [routerLink]="['/admin-dashboard/dashboard']"
       >
-        <span nz-icon nzType="dashboard"></span> <span>Dashboard</span>
+        <span nz-icon nzType="dashboard"></span> <span>Analytics</span>
       </li>
     </ul>
   </nz-sider>

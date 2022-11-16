@@ -3,7 +3,7 @@ import { HttpserviceService } from 'src/app/_services/httpservice.service';
 import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
 import * as am5 from '@amcharts/amcharts5';
 import * as am5xy from '@amcharts/amcharts5/xy';
-import { Title } from '@angular/platform-browser';
+import { NgxUiLoaderService } from "ngx-ui-loader";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,13 +11,15 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
-  constructor(private products: HttpserviceService) {}
+  constructor(private products: HttpserviceService, private ngxLoader: NgxUiLoaderService) { }
 
   ngOnInit(): void {
+    this.ngxLoader.startLoader('loader-01');
     this.products.getAllProductApi(1, 1000).subscribe((res) => {
       this.totalProductChart(res);
       this.secondChart(res);
       this.thirdChart(res);
+      this.ngxLoader.stopLoader('loader-01');
     });
   }
 
@@ -117,6 +119,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     chart.appear(1000, 100);
   }
 
+  //
   secondChart(products: any) {
     let productType: any = [];
     for (let i = 0; i < products.length; i++) {

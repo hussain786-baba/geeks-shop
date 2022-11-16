@@ -16,7 +16,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     logoPosition: "bottom-left",
     logoSize: 50,
     logoUrl: "../../assets/logo/logo2.png",
-    masterLoaderId: "master",
+    masterLoaderId: "loader-3",
     overlayBorderRadius: "0",
     overlayColor: "rgba(40, 40, 40, 0.8)",
     pbColor: "#f06543",
@@ -32,7 +32,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 const modules = [
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     // NgxUiLoaderRouterModule.forRoot({ showForeground: true }),
-    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    // NgxUiLoaderHttpModule.forRoot({ showForeground: false }),
   ]
 
 @NgModule({

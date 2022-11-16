@@ -6,6 +6,7 @@ import { NzZorroModule } from '../_models_and_interface/nz-zorro.module';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { MaterialuiModule } from '../_models_and_interface/materialui.module';
+import { NgxLoaderComponent } from '../components/ngx-loader/ngx-loader.component';
 
 const routes = [
   {
