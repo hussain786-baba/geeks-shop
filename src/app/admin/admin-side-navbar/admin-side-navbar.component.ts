@@ -11,7 +11,4 @@ export class AdminSideNavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  toggleCollapsed(): void {
-    this.isCollapsed = !this.isCollapsed;
-  }
 }

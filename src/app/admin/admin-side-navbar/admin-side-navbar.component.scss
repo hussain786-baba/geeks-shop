@@ -20,18 +20,33 @@ nz-header {
   background: #001529;
   color: #fff;
   padding: 0;
+  margin-left: 12rem;
 }
 
 nz-content {
-  margin: 0 16px;
+  margin: 0 1rem 0 14rem ;
 }
 
 .inner-content {
   padding: 24px;
   background: #fff;
   min-height: 360px;
+  overflow: initial;
 }
-.logo-src{
+.logo-src {
   width: 36px;
   height: 36px;
+}
+.ant-layout.ant-layout-has-sider {
+  margin-top: 4.8rem;
+}
+nz-sider {
+  overflow: auto;
+  height: 100%;
+  position: fixed;
+  left: 0;
+}
+
+footer{
+  margin-left: 12rem;
 }
