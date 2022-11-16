@@ -1,46 +1,46 @@
-
-.cursor-pointer{
-cursor: pointer;
+.cursor-pointer {
+  cursor: pointer;
 }
 .icon-sahpe {
-    border-radius: 50%;
-    padding: 14px;
-    background-color: #ffeeda;
+  border-radius: 50%;
+  padding: 14px;
+  background-color: #ffeeda;
 }
 
 .section_1 {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
+  margin-top: 4.2rem !important;
 }
 
 .fontwawesomeicons {
-    font-size: 15px;
-    font-weight: 400;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .third-section {
-    padding-top: 4em;
-    padding-bottom: 10em;
-    background-color: var(--primary-aliceblue);
+  padding-top: 4em;
+  padding-bottom: 10em;
+  background-color: var(--primary-aliceblue);
 }
 
 .heading-cards {
-    margin-left: 4em;
+  margin-left: 4em;
 }
 
 .card-section {
-    gap: 10px;
+  gap: 10px;
 }
 
 .card {
-    box-shadow: 4px 5px 5px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 5px 5px -4px rgba(0, 0, 0, 0.75);
 }
 
 .btn {
-    background-color: var(--primary-color);
-    border: none;
+  background-color: var(--primary-color);
+  border: none;
 }
 
 .btn_home {
-    background-color: var( --pimary-oynx);
-    color: var(--primary-aliceblue);
+  background-color: var(--pimary-oynx);
+  color: var(--primary-aliceblue);
 }
