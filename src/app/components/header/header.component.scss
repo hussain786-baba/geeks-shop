@@ -59,7 +59,7 @@
   height: 4px;
 }
 
-.navbar .navbar-nav .nav-item:hover::after {
+.navbar .navbar-nav .nav-item:hover:after {
   width: 100%;
 }
 
@@ -148,13 +148,22 @@ hr {
 
 .admin-dashboard {
   background: #001529 !important;
+
+  .navbar-nav li a.active {
+    color: var(--primary-color) !important;
+  }
+
   .navbar-nav li a {
     color: var(--primary-aliceblue) !important;
   }
+
   .logo-text {
     color: #fff !important;
   }
-  .navbar .navbar-nav .nav-item::after {
+
+  .navbar-nav .nav-item::after {
     background-color: var(--primary-aliceblue) !important;
   }
+
+
 }
