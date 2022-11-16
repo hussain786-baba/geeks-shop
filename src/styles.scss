@@ -93,21 +93,17 @@ $angular-assignment-theme: mat.define-light-theme((color: (primary: $angular-ass
 // Scroll Bar 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 40px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--pimary-oynx);
-  border-radius: 10px;
 
 }
 
@@ -145,7 +141,6 @@ body {
 
 .product-page .mat-dialog-container {
   padding: 0 !important;
-  // overflow: hidden;
   transform: none !important;
   margin:17px auto !important;
 }
@@ -204,11 +199,13 @@ color: var(--primary-color);
   cursor: pointer;
 }
 
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .ant-btn-primary{
   border-color: var(--primary-color);
   background-color: var(--primary-color);
+}
+div.ant-notification.ant-notification-topRight{
+  top: 100px !important;
 }

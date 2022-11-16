@@ -85,6 +85,7 @@ export class SignupComponent implements OnInit {
       if (this.signup.value.password === this.signup.value.cf_password) {
         this._authService.signup(email, password).subscribe(
           (res) => {
+           
             this.notification.create(
               'success',
               'Success',

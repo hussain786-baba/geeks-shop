@@ -9,6 +9,7 @@ import {
   faUser,
   faVideo,
 } from '@fortawesome/free-solid-svg-icons';
+import { SubjectBehaviourService } from 'src/app/_services/subject-behaviour.service';
 
 @Component({
   selector: 'app-header',
@@ -24,9 +25,21 @@ export class HeaderComponent implements OnInit {
   signoutFont = faSignOut;
   faGearFont = faGear;
 
+  admin_Dashboard: boolean = false;
+
   constructor(
-    private _authService: AuthService
-  ) {}
+    private _authService: AuthService,
+    private subjectBehaviourService: SubjectBehaviourService
+  ) {
+    this.subjectBehaviourService.admin_dashboard_navColor$.subscribe((res) => {
+      if (res == '/admin-dashboard/dashboard') {
+        console.log(res);
+        this.admin_Dashboard = true;
+      } else {
+        this.admin_Dashboard = false;
+      }
+    });
+  }
 
   ngOnInit(): void {
     this._authService.user.subscribe((res) => {

@@ -1,6 +1,8 @@
 import { AuthService } from 'src/app/_services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { initializeApp } from 'firebase/app';
+import { RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -12,10 +14,6 @@ export class AppComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
   ngOnInit(): void {
-    // Import the functions you need from the SDKs you need
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
     // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: 'AIzaSyDUMlJxk1lrEEdnQTIwroGSKtrMP_pGZGM',
@@ -31,4 +29,5 @@ export class AppComponent implements OnInit {
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
   }
+
 }
