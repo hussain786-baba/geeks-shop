@@ -32,7 +32,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 const modules = [
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     // NgxUiLoaderRouterModule.forRoot({ showForeground: true }),
-    // NgxUiLoaderHttpModule.forRoot({ showForeground: false }),
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
   ]
 
 @NgModule({
