@@ -1,14 +1,6 @@
 import { AuthService } from './../../_services/auth.service';
 // import { SigninroutingService } from './../../_services/signinrouting.service';
 import { Component, OnInit } from '@angular/core';
-import { faRegistered } from '@fortawesome/free-regular-svg-icons';
-import {
-  faGear,
-  faSignIn,
-  faSignOut,
-  faUser,
-  faVideo,
-} from '@fortawesome/free-solid-svg-icons';
 import { SubjectBehaviourService } from 'src/app/_services/subject-behaviour.service';
 
 @Component({
@@ -18,13 +10,6 @@ import { SubjectBehaviourService } from 'src/app/_services/subject-behaviour.ser
 })
 export class HeaderComponent implements OnInit {
   signedIn: boolean = false;
-  // fontawesome
-  profileFont = faUser;
-  signinFont = faSignIn;
-  signupFont = faRegistered;
-  signoutFont = faSignOut;
-  faGearFont = faGear;
-
   admin_Dashboard: boolean = false;
 
   constructor(

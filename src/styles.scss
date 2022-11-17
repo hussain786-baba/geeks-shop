@@ -1,96 +1,66 @@
 
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+@use "@angular/material" as mat;
 @include mat.core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
 $angular-assignment-primary: mat.define-palette(mat.$indigo-palette);
-$angular-assignment-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
+$angular-assignment-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
 $angular-assignment-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$angular-assignment-theme: mat.define-light-theme((
-  color: (
-    primary: $angular-assignment-primary,
-    accent: $angular-assignment-accent,
-    warn: $angular-assignment-warn,
-  )
-));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($angular-assignment-theme);
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-// @use '@angular/material'as mat;
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$angular-assignment-primary: mat.define-palette(mat.$indigo-palette);
-$angular-assignment-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$angular-assignment-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$angular-assignment-theme: mat.define-light-theme((color: (primary: $angular-assignment-primary,
+$angular-assignment-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-assignment-primary,
       accent: $angular-assignment-accent,
       warn: $angular-assignment-warn,
-    )));
-
-// mat-dialog-container {
-//   background: #d1e7dd !important;
-// }
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+    ),
+  )
+);
 @include mat.all-component-themes($angular-assignment-theme);
 
-/* You can add global styles to this file, and also import other style files */
+@include mat.core();
+$angular-assignment-primary: mat.define-palette(mat.$indigo-palette);
+$angular-assignment-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
+$angular-assignment-warn: mat.define-palette(mat.$red-palette);
+$angular-assignment-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-assignment-primary,
+      accent: $angular-assignment-accent,
+      warn: $angular-assignment-warn,
+    ),
+  )
+);
 
+@include mat.all-component-themes($angular-assignment-theme);
 
 /* Importing Bootstrap SCSS file. */
 
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap");
 
 /* Importing Datepicker SCSS file. */
 
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 
 :root {
-  --primary-color: #F06543;
+  --primary-color: #f06543;
   --primary-platinim: #e8e9eb;
   --pimary-oynx: #313638;
-  --primary-aliceblue: #E9F1F7;
-  --secondary-oynx: #131B23;
+  --primary-aliceblue: #e9f1f7;
+  --secondary-oynx: #131b23;
   --primary-curve: #0099ff;
-  --primaryfont: 'Work Sans', sans-serif;
+  --primaryfont: "Work Sans", sans-serif;
 }
 
-// Scroll Bar 
+// Scroll Bar
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -104,7 +74,6 @@ $angular-assignment-theme: mat.define-light-theme((color: (primary: $angular-ass
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--pimary-oynx);
-
 }
 
 /* Handle on hover */
@@ -113,14 +82,12 @@ $angular-assignment-theme: mat.define-light-theme((color: (primary: $angular-ass
 }
 
 * {
-
-  font-family: var(--primaryfont)
+  font-family: var(--primaryfont);
 }
 
 html,
 body {
   height: 100%;
-
 }
 
 ::ng-deep body {
@@ -142,10 +109,10 @@ body {
 .product-page .mat-dialog-container {
   padding: 0 !important;
   transform: none !important;
-  margin:17px auto !important;
+  margin: 17px auto !important;
 }
 
-// Utility Classes  
+// Utility Classes
 .fw-600 {
   font-weight: 600 !important;
 }
@@ -153,7 +120,7 @@ body {
 .fw-700 {
   font-weight: 700 !important;
 }
-.fw-400{
+.fw-400 {
   font-weight: 400 !important;
 }
 
@@ -176,9 +143,15 @@ body {
 .fs-32 {
   font-size: 32px !important;
 }
+.fs-50 {
+  font-size: 50px !important;
+}
 
 .lh-16 {
   line-height: 16px !important;
+}
+.lh-55 {
+  line-height: 55px !important;
 }
 
 .lh-32 {
@@ -192,20 +165,30 @@ body {
 .p-18 {
   padding: 18px !important;
 }
-.primary-color{
-color: var(--primary-color);
+.primary-color {
+  color: var(--primary-color) !important;
 }
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-.ant-btn-primary{
+.ant-btn-primary {
   border-color: var(--primary-color);
   background-color: var(--primary-color);
+  transition: all 0.5s;
 }
-div.ant-notification.ant-notification-topRight{
+div.ant-notification.ant-notification-topRight {
   top: 100px !important;
+}
+.fs-70{
+  font-size: 70px;
 }
